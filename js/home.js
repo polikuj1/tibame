@@ -91,12 +91,110 @@ function countDown() {
 }
 setInterval(countDown, 1000);
 
-// hashtag
 
-const marquee_one = document.querySelector('#one');
-const marquee_one_rp = document.querySelector('#one_repeat');
+// media
+const photo = document.querySelector('.photo_box');
+const photo_re = document.querySelector('.photo_re');
 
-
-function mar() {
-  marquee_one.style.left = '-100%';
+setInterval(move,3000);
+let distance = 0;
+function move() {
+  distance += -288;
+  photo.style.left = distance + 'px';
+  const num = photo.style.left;
+  if (num == '-1440px') {
+    distance = 1440;
+    setTimeout(function() {
+      photo.classList.remove('tr');
+      setTimeout(function() {
+        photo.style.left = `${distance}px`;
+      },10)
+      setTimeout(function() {
+        photo.classList.add('tr');
+      },100)
+    },2800)
+  }
 }
+
+setInterval(move1,3000);
+let distance_re = 1440;
+function move1() {
+  distance_re += -288;
+  photo_re.style.left = distance_re + 'px';
+  const num = photo_re.style.left;
+  if (num == '-1440px') {
+    distance_re = 1440;
+    setTimeout(function() {
+      photo_re.classList.remove('tr');
+      setTimeout(function() {
+        photo_re.style.left = `${distance_re}px`;
+      },10)
+      setTimeout(function() {
+        photo_re.classList.add('tr');
+      },100)
+    },2800)
+  }
+}
+
+move();
+move1();
+
+
+const photo_ltr = document.querySelector('#photo_marquee');
+const photo_ltr_re = document.querySelector('#photo_marquee1');
+
+setInterval(ltr,3000);
+let dis = 0;
+function ltr() {
+  dis += 288;
+  photo_ltr.style.left = dis + 'px';
+  const num = photo_ltr.style.left;
+  if (num == '1440px') {
+    dis = -1440;
+    setTimeout(function() {
+      photo_ltr.classList.remove('tr');
+      setTimeout(function() {
+        photo_ltr.style.left = `${dis}px`;
+      },10)
+      setTimeout(function() {
+        photo_ltr.classList.add('tr');
+      },100)
+    },2800)
+  }
+}
+
+setInterval(ltr1,3000);
+let dis1 = -1440;
+function ltr1() {
+  dis1 += 288;
+  photo_ltr_re.style.left = dis1 + 'px';
+  const num = photo_ltr_re.style.left;
+  if (num == '1440px') {
+    dis1 = -1440;
+    setTimeout(function() {
+      photo_ltr_re.classList.remove('tr');
+      setTimeout(function() {
+        photo_ltr_re.style.left = `${dis1}px`;
+      },10)
+      setTimeout(function() {
+        photo_ltr_re.classList.add('tr');
+      },100)
+    },2800)
+  }
+}
+
+ltr();
+ltr1();
+
+// youtube蓋板
+const video = document.querySelector('.video video');
+const youtubeModal = document.querySelector('.modal');
+const youtubeModal_btn = document.querySelector('.youtube button');
+
+video.addEventListener('click', () => {
+  youtubeModal.style.display = 'block';
+})
+
+youtubeModal_btn.addEventListener('click', () => {
+  youtubeModal.style.display = 'none';
+})
