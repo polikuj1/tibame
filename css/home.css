@@ -13,7 +13,7 @@ header {
   align-items: center;
   padding: 10px 20px;
   position: fixed;
-  z-index: 3;
+  z-index: 10;
   top: 10px;
   transition: 1s;
 }
@@ -747,7 +747,14 @@ header .hamburger_menu::after {
 .interview .interview_wrap {
   width: 1440px;
   margin: auto;
-  background-color: red;
+  background-image: linear-gradient(90deg, hsl(23, 88%, 70%) 10%, transparent);
+}
+.interview h2 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  position: relative;
+  top: -30px;
 }
 .interview .interview_list {
   display: flex;
@@ -757,15 +764,20 @@ header .hamburger_menu::after {
   margin: 40px;
   position: relative;
 }
+.interview .interview_list .interview_item:hover::after {
+  top: 0;
+  height: 65%;
+}
 .interview .interview_list .interview_item::after {
   content: "";
-  width: 2px;
-  height: 50%;
+  width: 3px;
+  height: 30%;
   background-color: #000;
   position: absolute;
   display: block;
   right: -30px;
   top: 150px;
+  transition: 0.3s linear;
 }
 .interview .interview_list .interview_item:nth-of-type(1) .title {
   background-color: #efe92c;
@@ -791,6 +803,9 @@ header .hamburger_menu::after {
 .interview .interview_list .interview_item:nth-of-type(3)::after {
   background-color: #F89C13;
 }
+.interview .interview_list .interview_item:nth-of-type(3) .illustration {
+  top: -180px;
+}
 .interview .interview_list .interview_item .pic {
   width: 100%;
   height: 600px;
@@ -801,12 +816,15 @@ header .hamburger_menu::after {
   border-radius: 50px;
   -o-object-fit: cover;
      object-fit: cover;
+  position: relative;
+  z-index: 2;
 }
 .interview .interview_list .interview_item .txt {
   width: 300px;
   margin: auto;
   padding: 20px;
   position: relative;
+  z-index: 2;
   top: -100px;
 }
 .interview .interview_list .interview_item .txt .title {
@@ -831,4 +849,15 @@ header .hamburger_menu::after {
   padding-top: 20px;
   text-align: right;
   font-size: 18px;
+}
+.interview .interview_list .interview_item .illustration {
+  position: absolute;
+  width: 100px;
+  top: -100px;
+  left: 150px;
+  z-index: 1;
+}
+.interview .interview_list .interview_item .illustration img {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=home.css.map */
