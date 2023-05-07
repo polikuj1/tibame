@@ -462,7 +462,7 @@ header {
   background-color: $bg-color;
   padding: 60px 0;
   .wrap {
-    width: 1200px;
+    width: 1440px;
     margin: auto;
     padding: 20px;
     height: 300px;
@@ -502,7 +502,7 @@ header {
         left: 0;
       }
       h2 {
-        font-size: 45px;
+        font-size: 60px;
         font-weight: 700;
         padding-left: 20px;
         position: sticky;
@@ -516,23 +516,24 @@ header {
           height: 2px;
           position: absolute;
           bottom: 0px;
-          background-color: #dedada;
+          background-color: #353333;
         }
       }
       strong {
         display: block;
-        padding-left: 20px;
+        padding: 20px 0 0 20px;
         padding-bottom: 20px;
-        font-size: 22px;
+        font-size: 30px;
+        color: rgb(87, 7, 7);
         position: sticky;
-        top: 60px;
+        top: 70px;
         z-index: 3;
       }
       span {
         display: inline-block;
         position: sticky;
-        font-size: 20px;
-        top: 102px;
+        font-size: 25px;
+        top: 150px;
         color: $txt_color;
         font-weight: 700;
         z-index: 3;
@@ -544,25 +545,50 @@ header {
     table {
       tr {
         position: relative;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: rgba(255, 239, 157, 1);
+          z-index: 1;
+          transform: scaleX(0);
+          transform-origin: top right;
+          transition: transform 0.5s ease;
+        }
+        &:hover {
+          &::after {
+            transform: scaleX(1);
+            transform-origin: top left;
+          }
+        }
         td {
-          padding-bottom: 10px;
-          font-size: 17px;
+          position: relative;
+          z-index: 2;
+          padding: 15px;
+          font-size: 20px;
           font-weight: 700;
           a {
             display: block;
+            color: black;
             &:focus {
-              color: black;
+              color: red;
             }
           }
         }
         td:nth-of-type(2) {
-          font-size: 18px;
+          font-size: 22px;
           text-decoration: underline;
           color: $txt_color;
         }
         .tag {
           position: absolute;
-          right: 0;
+          right: 5px;
+          top: 50%;
+          transform: translateY(-50%);
           padding: 5px;
           background-color: #c5c3c3;
           font-size: 15px;
@@ -585,3 +611,278 @@ header {
 
 
 // news區塊
+
+.latest_news {
+  width: 100%;
+  background-color: $bg-color;
+  padding: 60px 0;
+  .news_wrap {
+    width: 1440px;
+    margin: auto;
+    // background-color: #aaa;
+    .news_list {
+      width: 1100px;
+      padding: 40px 60px;
+      margin-left: auto;
+      background-color: #FFF8B1;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    h2 {
+      position: absolute;
+      right: 0px;
+      top: -35px;
+      font-size: 60px;
+    }
+    .news_card {
+      width: 46%;
+      margin: 2%;
+      position: relative;
+      left: -420px;
+      margin-top: 40px;
+      .txt {
+        padding: 10px;
+        // background-color: #fff;
+        position: relative;
+        border: 1px solid black;
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: #fff;
+          z-index: 1;
+          transform: scaleX(0);
+          transform-origin: top right;
+          transition: transform 0.5s ease;
+        }
+        &:hover  {
+          &::after {transform: scaleX(1);
+          transform-origin: top left;
+          }
+        }
+        span {
+          position: relative;
+          z-index: 2;
+          display: block;
+          padding: 5px;
+          font-size: 18px;
+          font-weight: 600;
+          &:nth-of-type(1) {
+            font-size: 22px;
+          }
+        }
+      }
+      .pic {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        &:hover img{
+          transform: scale(1.1);
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        transform: scale(1);
+        vertical-align: middle;
+        transition: .5s;
+      }
+    }
+    .news_box {
+      width: 91%;
+      margin: -50px 0 0 auto;
+      padding: 50px 50px 0 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      background-color: #D2EACC;
+      table {
+        tr {
+          display: grid;
+          grid-template-columns: 2fr 3fr 8fr;
+          grid-template-rows: 1fr;
+          text-align: center;
+          padding: 15px 10px;
+          cursor: pointer;
+          position: relative;
+          &:hover {
+            &::after {
+              transform: scaleX(1);
+              transform-origin: top left;
+            }
+          }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            z-index: 1;
+            transform: scaleX(0);
+            transform-origin: top right;
+            transition: transform 0.5s ease;
+          }
+          &::before {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: #000;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+          }
+        }
+        td {
+          font-size: 20px;
+          font-weight: 600;
+          position: relative;
+          z-index: 2;
+          &:nth-of-type(1) {
+            span {
+              background-color: #000;
+              color: #fff;
+              display: inline-block;
+              padding: 3px 20px;
+              border-radius: 20px;
+            }
+          }
+          &:nth-of-type(3) {
+            text-align-last: left;
+          }
+          a {
+            color: black;
+          }
+        }
+      }
+      .more_news {
+        display: inline-block;
+        padding: 30px 0 20px;
+        color: black;
+        &:hover {
+          span {
+            border-bottom: 1px solid black;
+          }
+          i {
+            left: 10px;
+          }
+        }
+        span {
+          display: inline-block;
+          margin-right: 10px;
+          position: relative;
+        }
+        i {
+          font-size: 22px;
+          position: relative;
+        }
+      }
+    }
+  }
+}
+
+// 樂團專訪區塊
+
+.interview {
+  width: 100%;
+  background-color: $bg-color;
+  padding: 60px 0;
+  .interview_wrap {
+    width: 1440px;
+    margin: auto;
+    background-color: red;
+  }
+  .interview_list {
+    display: flex;
+    .interview_item {
+      width: 400px;
+      margin: 40px;
+      position: relative;
+      &::after {
+        content: '';
+        width: 2px;
+        height: 50%;
+        background-color: #000;
+        position: absolute;
+        display: block;
+        right: -30px;
+        top: 150px;
+      }
+      &:nth-of-type(1) {
+        .title {
+          background-color: #efe92c;
+        }
+        &::after {
+          background-color: #efe92c;
+        }
+      }
+      &:nth-of-type(2) {
+        top: 150px;
+        .title {
+          background-color: #1dd42c;
+        }
+        &::after {
+          background-color: #1dd42c;
+        }
+      }
+      &:nth-of-type(3) {
+        top: 300px;
+        .title {
+          background-color: #F89C13;
+        }
+        &::after {
+          background-color: #F89C13;
+        }
+      }
+      .pic {
+        width: 100%;
+        height: 600px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50px;
+        object-fit: cover;
+      }
+      .txt {
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        position: relative;
+        top: -100px;
+        .title {
+          padding: 20px;
+          font-size: 22px;
+          font-weight: 700;
+          a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #000;
+            &:hover {
+              color: #fff;
+            }
+          }
+          span {
+            display: block;
+            padding: 10px 0;
+          }
+        }
+        .edit_department {
+          padding-top: 20px;
+          text-align: right;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
