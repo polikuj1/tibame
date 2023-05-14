@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="css/home.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="modal">
@@ -14,111 +17,106 @@
       <iframe width="560" height="315" src="https://www.youtube.com/embed/Qq4P2kGs9QA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
-  <!-- 標題區 -->
-  <header class="header">
-    <div class="logo_area">
-      <div class="logo">
-        <img src="image/Component 13.jpg" alt="網站LOGO">
+  <!-- header -->
+  <header>
+    <input type="checkbox" id="menu" style="display: none;">
+    <div class="hamburger_menu">
+      <div class="menu_btn_wrap">
+        <label for="menu" class="menu_btn"></label>
+        <span>M</span>
+        <span>E</span>
+        <span>N</span>
+        <span>U</span>
       </div>
-      <div class="cn_name">音旅</div>
-      <div class="en_name">MusicTour</div>
+      <h2>search your music</h2>
     </div>
     <nav>
       <ul>
-        <li><a href="">Home</a></li>
-        <li>
-          <a href="">Info</a>
-          <ul>
-            <li><a href="">About</a></li>
-            <li><a href="">FAQ</a></li>
-          </ul>
+        <li><a href="" class="text_linear">HOME</a></li>
+        <li><a href="" class="text_linear">ABOUT</a></li>
+        <li><a href="" class="text_linear">MUSIC FESTIVAL</a></li>
+        <li><a href="" class="text_linear">ARTISTS</a></li>
+        <li><a href="" class="text_linear">PLAYLIST</a></li>
+        <li><a href="" class="text_linear">TICKETS</a></li>
+        <li><a href="" class="text_linear">FAQ</a></li>
+        <li class="subscribe"><button class="text_linear">SUBSCRIBE</button></li>
+        <li class="share">
+          <span class="text_linear">share</span>
+          <div class="social_icon">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-square-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
         </li>
-        <li>
-          <a href="">Music Festival</a>
-          <ul>
-            <li><a href="">Northern Taiwan</a></li>
-            <li><a href="">Central Taiwan</a></li>
-            <li><a href="">Southern Taiwan</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="">Artists</a>
-          <ul>
-            <li><a href="">Line Up</a></li>
-            <li><a href="">PlayList</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="">Tickets</a>
-          <ul>
-            <li><a href="">members</a></li>
-            <li><a href="">Non-members</a></li>
-          </ul>
-        </li>
-        <li><a href="">Goods</a></li>
       </ul>
     </nav>
-    <div class="hamburger_menu"></div>
-  </header>
-  <!-- 橫幅區 -->
-  <section class="banner">
-    <div class="banner_logo">
-      <button class="subscribe">SUBSCRIBE US</button>
-      <div class="logo">
-        <div class="title">
-          <span>人生</span>
-          <span>音樂</span>
-        </div>
-        <span class="side_logo">
-          <span>#ROCK</span><span>#BLUE</span><span>#RAP</span><span>#POP</span>
-        </span>
-        <span class="side_logo">
-          <span>#JAZZ</span><span>#FOLK</span><span>#DANCE</span><span>#EDM</span>
-        </span>
-        <span class="decoration"></span>
-        <span class="decoration1"></span>
+    <div class="banner">
+      <div class="website_logo">
+        <img src="image/logo.png" alt="">
       </div>
-    </div>
-    <div class="banner_wrap">
       <div class="banner_pic">
-        <div class="pic show">
-          <img src="banner6.jpg" alt="">
-        </div>
-        <div class="pic">
-          <img src="banner2.jpg" alt="">
-        </div>
-        <div class="pic">
-          <img src="banner3.jpg" alt="">
-        </div>
-        <div class="pic">
-          <img src="banner4.jpg" alt="">
-        </div>
-        <div class="pic">
-          <img src="banner5.jpg" alt="">
+        <img src="image/4.jpg" alt="">
+      </div>
+      <div class="banner_logo">
+        <div class="logo">
+          <div class="title">
+            <span>人生</span>
+            <span>音樂</span>
+          </div>
+          <span class="side_logo">
+            <span>#ROCK</span><span>#BLUE</span><span>#RAP</span><span>#POP</span>
+          </span>
+          <span class="side_logo">
+            <span>#JAZZ</span><span>#FOLK</span><span>#DANCE</span><span>#EDM</span>
+          </span>
+          <span class="decoration"></span>
+          <span class="decoration1"></span>
         </div>
       </div>
-      <div class="banner_btn">
-        <button type="button" class="right">
-          <i>></i>
-        </button>
-        <button type="button" class="left">
-          <i><</i>
-        </button>
+      <div class="blue_mask"></div>
+    </div>
+  </header>
+  <!-- marquee -->
+  <section class="marquee">
+    <div class="marquee_pic">
+      <div class="pic_list first">
+        <div class="pic">
+          <img src="image/7.jpg" alt="">
+        </div>
+        <div class="pic">
+          <img src="image/8.jpg" alt="">
+        </div>
+        <div class="pic">
+          <img src="image/9.jpg" alt="">
+        </div>
+        <div class="pic">
+          <img src="image/10.jpg" alt="">
+        </div>
+        <div class="pic">
+          <img src="image/11.jpg" alt="">
+        </div>
       </div>
-      <div class="banner_slogan">
-        <div class="slogan_item show">聽見音樂的力量</div>
-        <div class="slogan_item">細聽人生旋律</div>
-        <div class="slogan_item">音樂定格，生命流動</div>
-        <div class="slogan_item">音樂，展現我們的靈魂</div>
-        <div class="slogan_item">揮灑你我的熱血</div>
+      <div class="pic_list two">
+        <div class="pic">
+          <img src="image/12.jpg" alt="">
+        </div>
+        <div class="pic">
+          <img src="image/13.jpg" alt="">
+        </div>
+        <div class="pic">
+          <img src="image/14.jpg" alt="">
+        </div>
+        <div class="pic">
+          <img src="image/15.jpg" alt="">
+        </div>
+        <div class="pic">
+          <img src="image/16.jpg" alt="">
+        </div>
       </div>
     </div>
-  </section>
-  <!-- hashtag區 -->
-  <section class="hashtag">
-    <div class="marquee">
-      <div class="marquee_box">
-        <div id="one">
+    <div class="marquee_hashtag">
+      <div class="hashtag_wrap">
+        <div class="one_hashtag hashtag">
           <span>#啤酒、音樂、露營</span>
           <span>#怕胖團有夠胖</span>
           <span>#告五人好讚</span>
@@ -133,7 +131,7 @@
           <span>#愛情你比我想的閣較偉大</span>
           <span>#獨立音樂</span>
         </div>
-        <div id="one_repeat">
+        <div class="one_hashtag re_hashtag">
           <span>#啤酒、音樂、露營</span>
           <span>#怕胖團有夠胖</span>
           <span>#告五人好讚</span>
@@ -149,43 +147,56 @@
           <span>#獨立音樂</span>
         </div>
       </div>
-    </div>
-    <div class="marquee">
-      <div class="marquee_box">
-        <div id="two">
-          <span>#下雨天怎麼辦</span>
-          <span>#電火王</span>
-          <span>#我是一隻魚</span>
-          <span>#live_music</span>
-          <span>#人森好難</span>
-          <span>#神奇寶貝</span>
-          <span>#festival_season</span>
-          <span>#今晚沒有六</span>
-          <span>#今晚你要離開</span>
-          <span>#soulful_sounds</span>
-          <span>#快下雨吧</span>
-          <span>#什麼都好說</span>
-          <span>#music_party</span>
-        </div>
-        <div id="two_repeat">
-          <span>#浪人祭</span>
-          <span>#我要打什麼</span>
-          <span>#今天不睡覺</span>
-          <span>#草地跳舞</span>
-          <span>#我是沒有用的年輕人</span>
-          <span>#賽博台客</span>
-          <span>#京都大作戰</span>
-          <span>#人生的音樂祭</span>
-          <span>#至少我們還有音樂</span>
-          <span>#無妄社會</span>
-          <span>#我沒有用</span>
+      <div class="hashtag_wrap">
+        <div class="one_hashtag hashtag">
+          <span>#草地、野餐</span>
           <span>#世界第一</span>
-          <span>##草地、野餐</span>
+          <span>#我沒有用</span>
+          <span>#無妄社會</span>
+          <span>#至少我們還有音樂</span>
+          <span>#人生的音樂祭</span>
+          <span>#切板好累</span>
+          <span>#賽博台客</span>
+          <span>#浪人祭</span>
+          <span>#浮現祭</span>
+          <span>#放生</span>
+          <span>#美好的事可不可以發生在我身上</span>
+          <span>#關閉太陽</span>
+          <span>#快點點我吧</span>
+        </div>
+        <div class="one_hashtag re_hashtag">
+          <span>#草地、野餐</span>
+          <span>#世界第一</span>
+          <span>#我沒有用</span>
+          <span>#無妄社會</span>
+          <span>#至少我們還有音樂</span>
+          <span>#人生的音樂祭</span>
+          <span>#切板好累</span>
+          <span>#賽博台客</span>
+          <span>#浪人祭</span>
+          <span>#浮現祭</span>
+          <span>#放生</span>
+          <span>#美好的事可不可以發生在我身上</span>
+          <span>#關閉太陽</span>
+          <span>#快點點我吧</span>
         </div>
       </div>
     </div>
   </section>
-  <!-- 時間表 -->
+  <!-- poster -->
+  <section class="poster">
+    <div class="poster_wrap">
+        <div class="poster_list">
+          <div class="pic">
+            
+          </div>
+          <div class="pic">
+            
+          </div>
+        </div>
+    </div>
+  </section>
+  <!-- timetable -->
   <section class="timetable">
     <div class="wrap">
       <div class="title">
@@ -300,27 +311,38 @@
       </table>
     </div>
   </section>
-  <!-- news區 -->
+  <!-- latestNews -->
   <section class="latest_news">
     <div class="news_wrap">
-      <div class="news_list">
+      <div class="news_group">
         <h2>LATEST NEWS</h2>
-        <div class="news_card">
-          <div class="pic">
-            <img src="./image/news1.png" alt="">
+        <div class="news_card_list">
+          <div class="news_card">
+            <div class="pic">
+              <img src="./image/news1.jpg" alt="">
+            </div>
+            <div class="txt">
+              <span>快訊</span>
+              <span>赤子之聲樂團選拔開始，熱烈報名中</span>
+            </div>
           </div>
-          <div class="txt">
-            <span>快訊</span>
-            <span>台中小浪人音樂祭，開唱時間決定</span>
+          <div class="news_card">
+            <div class="pic">
+              <img src="./image/news2.png" alt="">
+            </div>
+            <div class="txt">
+              <span>快訊</span>
+              <span>台中小浪人音樂祭，開唱時間決定</span>
+            </div>
           </div>
-        </div>
-        <div class="news_card">
-          <div class="pic">
-            <img src="./image/news.jpg" alt="">
-          </div>
-          <div class="txt">
-            <span>快訊</span>
-            <span>赤子之聲樂團選拔開始，熱烈報名中</span>
+          <div class="news_card">
+            <div class="pic">
+              <img src="./image/news3.jpg" alt="">
+            </div>
+            <div class="txt">
+              <span>快訊</span>
+              <span>大港開唱公布第二波歌手演出名單</span>
+            </div>
           </div>
         </div>
         <div class="news_box">
@@ -352,81 +374,75 @@
           </table>
           <a href="" class="more_news">
             <span>VIEW MORE</span> 
-            <i class="fa-solid fa-arrow-right"></i>
+            <div><img src="./image/right.png" alt=""></div>
           </a>
         </div>
       </div>
+      
     </div>
   </section>
-  <!-- 樂團專訪 -->
+  <!-- interview -->
   <section class="interview">
     <div class="interview_wrap">
       <h2>ARTISTS INTERVIEW</h2>
       <div class="interview_list">
-        <div class="interview_item">
+        <div class="interview_card_column">
           <div class="pic">
-            <img src="image/deca joins.jpg" alt="">
+            <img src="./image/deca joins.jpg" alt="deca joins">
           </div>
           <div class="txt">
-            <div class="title">
-              <a href="https://www.elle.com/tw/entertainment/voice/g35719616/deca-joins-special-report/" target="_blank">
-                <span>專訪 | Deca joins</span>
-                <span>以音樂代謝你的負面心情</span>
-              </a>
+            <div class="interview_title">
+              <a href=""><span>專訪 | Deca joins</span></a>
+              <a href=""><span>以音樂代謝你的負面心情</span></a>
             </div>
-            <div class="edit_department">
-              音旅編輯部
-            </div>
-          </div>
-          <div class="illustration">
-            <img src="image/吉他手.png" alt="">
+            <div class="edit">音旅編輯部</div>
           </div>
         </div>
-        <div class="interview_item">
+        <div class="interview_card_row">
           <div class="pic">
-            <img src="image/美秀集團.jpg" alt="">
+            <img src="./image/老王.jpg" alt="老王樂團">
           </div>
           <div class="txt">
-            <div class="title">
-              <a href="https://blow.streetvoice.com/57638/" target="_blank">
-                <span>專訪 | 美秀集團</span>
-                <span>拼貼千禧世代的賽博台客談《多色寶山大王》：我們絕對不會停止冒險</span>
-              </a>
+            <div class="interview_title">
+              <a href=""><span>專訪 | 老王樂團</span></a>
+              <a href=""><span>從〈我還年輕〉到〈這樣就好〉，用音樂陪年輕世代「轉大人」</span></a>
             </div>
-            <div class="edit_department">
-              音旅編輯部
-            </div>
-          </div>
-          <div class="illustration">
-            <img src="image/鍵盤手.png" alt="">
-          </div>
-        </div>
-        <div class="interview_item">
-          <div class="pic">
-            <img src="image/告五人啦.jpg" alt="">
-          </div>
-          <div class="txt">
-            <div class="title">
-              <a href="https://www.biosmonthly.com/article/10539" target="_blank">
-                <span>專訪 | 告五人</span>
-                <span>最好的哈密瓜，給一起經歷風暴的人</span>
-              </a>
-            </div>
-            <div class="edit_department">
-              音旅編輯部
-            </div>
-          </div>
-          <div class="illustration">
-            <img src="image/主唱手.png" alt="">
+            <div class="edit">音旅編輯部</div>
           </div>
         </div>
       </div>
+      <div class="interview_list">
+        <div class="interview_card_row card_row">
+          <div class="pic">
+            <img src="./image/Crispy脆樂團1.jpg" alt="老王樂團">
+          </div>
+          <div class="txt">
+            <div class="interview_title">
+              <a href=""><span>專訪 | 老王樂團</span></a>
+              <a href=""><span>從〈我還年輕〉到〈這樣就好〉，用音樂陪年輕世代「轉大人」</span></a>
+            </div>
+            <div class="edit">音旅編輯部</div>
+          </div>
+        </div>
+        <div class="interview_card_column card_column">
+          <div class="pic">
+            <img src="./image/美秀集團.jpg" alt="deca joins">
+          </div>
+          <div class="txt">
+            <div class="interview_title">
+              <a href=""><span>專訪 | Deca joins</span></a>
+              <a href=""><span>以音樂代謝你的負面心情</span></a>
+            </div>
+            <div class="edit">音旅編輯部</div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
-  <!-- 媒體區 -->
+  <!-- MEDIA -->
   <section class="media">
     <div class="media_wrap">
-      <h2>MEDIA</h2>
       <div class="photo_marquee">
         <div class="photo_box tr">
           <div><img src="image/1.jpg" alt=""></div>
@@ -448,7 +464,7 @@
           <video src="./image/video_area.mp4" autoplay muted></video>
         </div>
         <div class="video_txt">
-          <h3>熱門影片</h3>
+          <h2>MEDIA</h2>
           <span>為你提供各樂團最新發行專輯影片，以及每場音樂祭的活動集錦，隨時隨地關注最新動態</span>
           <span>We will deliver music videos
             and live films</span>
@@ -476,10 +492,50 @@
       </div>
     </div>
   </section>
-
-
-
-  <script src="js/home.js" defer></script>
+  <!-- ad slogan區 -->
+  <section class="ad_slogan">
+    <div class="black_mask"></div>
+    <div class="ad_wrap">
+      <span>EXPLORE YOUR OWN MUSIC</span>
+    </div>
+  </section>
+  <!-- social media -->
+  <section class="social_media">
+    <div class="social_wrap">
+      <ul>
+        <li><a href="#"><i class="fa-brands fa-twitter"></i>follow me</a></li>
+        <li><a href="#"><i class="fa-brands fa-instagram"></i>follow me</a></li>
+        <li><a href="#"><i class="fa-brands fa-youtube"></i>follow me</a></li>
+        <li><a href="#"><i class="fa-brands fa-line"></i>follow me</a></li>
+        <li><a href="#"><i class="fa-brands fa-facebook-f"></i>follow me</a></li>
+      </ul>
+    </div>
+  </section>
+  <!-- footer -->
+  <footer>
+    <div class="footer_wrap">
+      <div class="footer_logo">
+        <img src="image/logo.png" alt="">
+      </div>
+      <div class="footer_nav">
+        <span><a href="">HOME</a></span>
+        <span><a href="">ABOUT</a></span>
+        <span><a href="">MUSIC FESTIVAL</a></span>
+        <span><a href="">ARTISTS</a></span>
+        <span><a href="">訂閱電子報</a></span>
+        <span><a href="">TICKETS</a></span>
+        <span><a href="">FAQ</a></span>
+        <span><a href="">PLAYLIST</a></span>
+        <span><a href="">聯絡我們</a></span>
+        <span><input type="text" placeholder="輸入信箱"></span>
+      </div>
+    </div>
+    <div class="footer_copy">
+      <span>探索屬於你的音樂</span>
+      <span>© 2023 Copyright - 前端練習股份有限公司 - made by musictravel</span>
+    </div>
+  </footer>
+  <script src="./js/home.js"></script>
   <script src="https://kit.fontawesome.com/10662d5b44.js" crossorigin="anonymous"></script>
 </body>
 </html>

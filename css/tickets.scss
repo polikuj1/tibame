@@ -1,0 +1,371 @@
+$title_color: #F3E4E4;
+$title_border: #8C7878;
+$txt_color: #FAF9F5;
+$txt_border: #DDCB2A;
+$main_bg_color: #0F0F0F;
+$card_bg_color: #5F5F5F;
+$main_text_font: 'Montserrat', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  background-color: $main_bg_color;
+}
+
+// header區
+header {
+  width: 100%;
+  position: relative;
+  .hamburger_menu {
+    font-family: $main_text_font;
+    width: 60px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    z-index: 11;
+    right: 0;
+    top: 0;
+    background: linear-gradient(357.8deg, #57AD6A 19.33%, #84CC47 47.17%, #0bc8e1 93.66%);
+    .menu_btn_wrap {
+      flex-grow: 1;
+      padding-top: 30px;
+    }
+    .menu_btn {
+      width: 45px;
+      height: 45px;
+      display: block;
+      background-color:#FAF9F5;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 20px;
+      &:before {
+        content: '';
+        width: 60%;
+        height: 2px;
+        background-color: #12c135;
+        position: absolute;
+        display: block;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .5s;
+      }
+      &:after {
+        content: '';
+        width: 60%;
+        height: 2px;
+        background-color: #12c135;
+        position: absolute;
+        display: block;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: .5s;
+      }
+    }
+    span {
+      text-align: center;
+      display: block;
+      font-size: 18px;
+      line-height: 29px;
+      color: #FAF9F5;
+      font-weight: 500;
+    }
+    h2 {
+      writing-mode: vertical-lr;
+      flex-grow: 2;
+      font-weight: 400;
+      font-size: 24px;
+      text-transform: uppercase;
+      line-height: 29px;
+      color: #FAF9F5;
+      letter-spacing: 3px;
+    }
+  }
+  #menu {
+    &:checked {
+      ~ nav {
+        right: 60px;
+      }
+      ~ .hamburger_menu .menu_btn {
+        &:before {
+          transform: rotate(45deg);
+          transform-origin: left bottom;
+          left: 25%;
+          top: 25%;
+        }
+        &:after {
+          transform: rotate(-45deg);
+          transform-origin: left bottom;
+          left: 25%;
+          top: 70%;
+        }
+      }
+    }
+  }
+  nav {
+    font-family: $main_text_font;
+    width: 360px;
+    height: 100vh;
+    position: fixed;
+    padding: 50px 0 10px 0;
+    right: -360px;
+    transition: 1s;
+    background-color: #FAF9F5;  
+    z-index: 10;
+    ul {
+      height: 100%;
+      display: flex;
+      padding: 0 30px;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      .text_linear {
+        background: linear-gradient(180deg, #57AD6A 0%, #84CC47 41.15%, #0DE2FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      li {
+        font-size: 28px;
+      }
+      .subscribe {
+        background: #FAF9F5;
+        background-clip: padding-box;
+        border-radius: 16px;
+        padding: 0px;
+        border: 1px solid transparent;
+        position: relative;
+        margin-top: 30px;
+        &:hover {
+          background-color: #f2f0eaa5;
+          button {
+            background: linear-gradient(180deg, #16822e 0%, #60aa1e 41.15%, #0e7e8d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          inset: -1px -1px -1px -1px;
+          background: linear-gradient(180deg, #57AD6A 0%, #84CC47 41.15%, #0DE2FF 100%);
+          border-radius: 16px;
+          display: block;
+          z-index: -1;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          padding: 20px 60px;
+          text-align: center;
+          display: block;
+          font-size: 16px;
+          font-weight: 700;
+          cursor: pointer;
+        }
+      }
+      .border_image {
+        border-image: linear-gradient(#57AD6A
+        0%, #84CC47 40%, #0DE2FF 100%);
+        border-image-slice: 1;
+        background-origin: border-box;
+        background-clip: content-box, border-box;
+        border-radius: 50%;
+      }
+      a {
+        padding: 18px 18px 18px 0;
+        display: inline-block;
+        font-weight: 700;
+        position: relative;
+        &::after {
+          content: '';
+          width: 0;
+          height: 1px;
+          display: block;
+          position: absolute;
+          right: 0;
+          bottom: -2px;
+          transition: .5s;
+          background: linear-gradient(180deg, #57AD6A 0%, #84CC47 41.15%, #0DE2FF 100%);
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+      .share {
+        // padding: 0 35px 0;
+        margin: 40px 5px;
+        text-align: center;
+        font-weight: 700;
+        span {
+          display: block;
+          margin: 0px 30px 20px;
+        }
+        .social_icon {
+          padding: 0px;
+          i {
+            display: inline-block;
+            padding: 20px;
+            position: relative;
+            background: #FAF9F5;
+            background-clip: padding-box;
+            border-radius: 16px;
+            border: 1px solid transparent;
+            font-size: 26px;
+            margin-right: 5px;
+            color: #30b19b;
+            &:hover {
+              background: #f2f0eaa5;
+            }
+            &::after {
+              content: '';
+              position: absolute;
+              inset: -1px -1px -1px -1px;
+              background: linear-gradient(180deg, #57AD6A 0%, #84CC47 41.15%, #0DE2FF 100%);
+              border-radius: 16px;
+              display: block;
+              z-index: -1;
+            }
+          }
+        }
+      }
+    }
+  }
+  .about_wrap {
+    padding: 50px 0;
+    width: 80%;
+    margin: auto;
+  }
+  .logo {
+    position: absolute;
+    left: 50px;
+  }
+  .about_title {
+    padding: 200px 0 0 0;
+    h2 {
+      font-family: $main_text_font;
+      font-weight: 700;
+      font-size: 96px;
+      line-height: 116px;
+      word-spacing: 10px;
+      letter-spacing: 5px;
+      color: $title_color;
+      position: relative;
+      &::after {
+        content: '';
+        width: 100%;
+        height: 5px;
+        background-color: $title_border;
+        position: absolute;
+        bottom: -60px;
+        left: 0;
+      }
+    }
+  }
+}
+
+// tickets區
+
+.tickets {
+  width: 100%;
+  padding: 100px 0;
+  .tickets_wrap {
+    width: 80%;
+    margin: auto;
+    h3 {
+      color: $txt_color;
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 77px;
+      padding-bottom: 50px;
+    }
+    .popular_tickets {
+      padding-bottom: 100px;
+      .tickets_card_list {
+        display: flex;
+        justify-content: space-between;
+        a {
+          width: 23%;
+          display: block;
+        }
+        .pic {
+          width: 100%;
+          img {
+            width: 100%;
+            vertical-align: middle;
+          }
+        }
+        .txt {
+          color: $txt_color;
+          font-size: 28px;
+          padding: 20px 0;
+          text-align: center;
+          background-color: $card_bg_color;
+          span {
+            display: block;
+            &:nth-of-type(1) {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+    .all_tickets {
+      ul {
+        // background-color: #aaa;
+      }
+      li {
+        padding-bottom: 50px;
+        h4 {
+          color: $txt_color;
+          padding: 20px 50px;
+          font-weight: 700;
+          font-size: 40px;
+          background: linear-gradient(90deg, #005561 -10.81%, #A3A31E 99.18%);
+          border-radius: 20px;
+        }
+        .tickets_info {
+          color: $txt_color;
+          font-size: 26px;
+          padding: 50px 50px;
+          border-right: 1px solid $txt_color;
+          border-left: 1px solid $txt_color;
+          border-bottom: 1px solid $txt_color;
+          border-radius: 0 0 20px 20px;
+          display: grid;
+          grid-template-rows: 1fr;
+          grid-template-columns: repeat(3, 1fr) 300px;
+        }
+        span {
+          display: flex;
+        }
+        a {
+          margin-left: auto;
+          font-size: 30px;
+          font-weight: 700;
+          color: $txt_color;
+          display: inline-block;
+          &:nth-of-type(1) {
+            // cursor: not-allowed;
+          }
+          &:hover {
+            color: #34DAC1;
+          }
+          i {
+            font-size: 30px;
+            padding: 0 20px;
+          }
+        }
+      }
+    }
+  }
+}
