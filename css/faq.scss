@@ -272,3 +272,30 @@ header {
     }
   }
 }
+
+// faq區
+.faq {
+  width: 100%;
+  padding: 100px 0;
+  .faq_wrap {
+    width: 80%;
+    margin: auto;
+    position: relative;
+  }
+  .separate_side_wrap {
+    width: 40%;
+    height: 100vh;
+    position: sticky;
+    left: 0;
+    top: 0px;
+    .side_pic {
+      background: url('../image/ticketsbanner.jpg') no-repeat center center/ cover;
+      height: 100%;
+    }
+  }
+  .faq_block_group {
+    width: 60%;
+    margin-left: 40%;
+    padding-top: 100px;
+  }
+}
