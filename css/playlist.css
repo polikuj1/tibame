@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,25 @@
 
 body {
   background-color: #0F0F0F;
+}
+
+h3 {
+  color: #FAF9F5;
+  font-size: 64px;
+  font-weight: 700;
+  padding-bottom: 50px;
+  position: relative;
+}
+h3::after {
+  content: "";
+  width: 10%;
+  height: 1px;
+  background-color: #aaa;
+  position: absolute;
+  bottom: 30px;
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 header {
@@ -288,6 +308,7 @@ header .about_title h2::after {
   color: #FAF9F5;
   font-size: 36px;
   text-align: center;
+  font-family: "Noto Sans TC", sans-serif;
 }
 .owl-carousel .owl-nav {
   display: none;
@@ -308,29 +329,45 @@ header .about_title h2::after {
   height: 5px;
 }
 
-.playlist {
-  color: #fff;
+.video {
+  position: relative;
   padding: 100px 0;
 }
 
 .marquee {
-  padding: 50px 0;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 .marquee .marquee_wrap {
   width: 100%;
   display: flex;
   gap: 30px;
+  overflow: hidden;
   position: relative;
-  height: 80px;
+  height: 150px;
 }
 .marquee .txt {
+  font-family: "Montserrat", sans-serif;
   position: relative;
   color: transparent;
-  -webkit-text-stroke: 2px #9b9b9b;
-  font-size: 130px;
+  -webkit-text-stroke: 2px #636363;
+  font-size: 125px;
   word-spacing: 80px;
   flex-shrink: 0;
+  margin-right: 50px;
+}
+.marquee .one {
+  animation: mar 10s linear 1 forwards, mar1 20s linear 10s infinite;
+}
+.marquee .one:hover {
+  animation-play-state: paused;
+}
+.marquee .one:hover ~ .two {
+  animation-play-state: paused;
+}
+.marquee .two {
+  animation: mar2 20s linear infinite;
 }
 
 @keyframes mar {
@@ -343,7 +380,7 @@ header .about_title h2::after {
 }
 @keyframes mar1 {
   from {
-    left: 100%;
+    left: 105%;
   }
   to {
     left: -100%;
@@ -355,5 +392,143 @@ header .about_title h2::after {
   }
   to {
     left: -200%;
+  }
+}
+.albums {
+  width: 100%;
+  padding: 0px 0 100px 0;
+  color: #FAF9F5;
+}
+.albums .albums_wrap {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+.albums p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 2em;
+}
+.albums .albums_list {
+  display: flex;
+  justify-content: space-between;
+}
+.albums .album_card_group {
+  width: 30%;
+  position: relative;
+}
+.albums .album_card_group:nth-child(1) {
+  top: 80px;
+}
+.albums .album_card_group:nth-child(2) {
+  top: 160px;
+}
+.albums .card {
+  display: flex;
+  margin: 100px 0;
+}
+.albums .card:hover .pic img {
+  filter: grayscale(0);
+  transform: scale(1.05);
+}
+.albums .card:hover .txt span {
+  color: #DDCB2A;
+}
+.albums .card .pic {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+.albums .card .pic img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+  filter: grayscale(80%);
+  transform: scale(1);
+  transition: 0.3s;
+}
+.albums .card .txt {
+  writing-mode: vertical-lr;
+  text-align: right;
+}
+.albums .card .txt span {
+  font-family: "Noto Sans TC", sans-serif;
+  display: block;
+  font-size: 24px;
+  color: #FAF9F5;
+}
+.albums .card .txt span:nth-of-type(2) {
+  color: #aaa;
+}
+
+.listen_more {
+  width: 100%;
+  padding: 100px 0;
+}
+.listen_more .listen_wrap {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.listen_more .cd_list {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.listen_more .cd {
+  width: 17%;
+}
+.listen_more .cd .pic {
+  width: 160px;
+  height: 160px;
+  margin: auto;
+  position: relative;
+  cursor: pointer;
+}
+.listen_more .cd .pic:hover {
+  filter: brightness(120%);
+}
+.listen_more .cd .pic:hover ~ .title {
+  background-color: #4EF8EB;
+  color: #000;
+}
+.listen_more .cd .pic::before {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: #0F0F0F;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.listen_more .cd img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+}
+.listen_more .cd .title {
+  color: #aaa;
+  margin-top: 20px;
+  padding: 5px;
+  display: inline-block;
+}
+.listen_more .rotate {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=playlist.css.map */
