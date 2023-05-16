@@ -23,7 +23,6 @@ function slideAnswer(e) {
         if(item.dataset.id === id) {
           item.classList.toggle('rotate');
         }
-        
       })
       faqAnswer.forEach(item => {
         if(item.dataset.id === id) {

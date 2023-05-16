@@ -285,9 +285,13 @@ header .about_title h2::after {
 }
 .tickets .tickets_wrap .popular_tickets .tickets_card_list .pic {
   width: 100%;
+  height: 250px;
 }
 .tickets .tickets_wrap .popular_tickets .tickets_card_list .pic img {
   width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: middle;
 }
 .tickets .tickets_wrap .popular_tickets .tickets_card_list .txt {

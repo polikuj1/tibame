@@ -21,6 +21,10 @@ header {
   width: 100%;
   position: relative;
   .hamburger_menu {
+    -webkit-transition-duration: 1.65s;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition-delay: 0s;
+    // transition: 1s linear;
     font-family: $main_text_font;
     width: 60px;
     height: 100vh;
@@ -94,6 +98,7 @@ header {
         right: 60px;
       }
       ~ .hamburger_menu .menu_btn {
+        border: 1px solid $card_bg_color;
         &:before {
           transform: rotate(45deg);
           transform-origin: left bottom;
@@ -107,6 +112,20 @@ header {
           top: 70%;
         }
       }
+      ~ .hamburger_menu {
+        background: #FEFCF1;
+        border-left: 1px solid $title_color;
+      }
+      ~ .hamburger_menu .menu_btn_wrap span{
+        background: linear-gradient(180deg, #57AD6A 0%, #84CC47 41.15%, #0DE2FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      ~ .hamburger_menu h2 {
+        background: linear-gradient(180deg, #57AD6A 0%, #84CC47 41.15%, #0DE2FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
   nav {
@@ -116,7 +135,7 @@ header {
     position: fixed;
     padding: 50px 0 10px 0;
     right: -360px;
-    transition: 1s;
+    transition: 0.65s;
     background-color: #FAF9F5;  
     z-index: 10;
     ul {
@@ -273,102 +292,99 @@ header {
   }
 }
 
-// tickets區
-
-.tickets {
-  width: 100%;
+// 影片幻燈片
+.owl-carousel {
   padding: 100px 0;
-  .tickets_wrap {
-    width: 80%;
-    margin: auto;
-    h3 {
+  .item-video {
+    height: 600px;
+    > div {
+      padding-bottom: 20px;
       color: $txt_color;
-      font-weight: 400;
-      font-size: 50px;
-      line-height: 77px;
-      padding-bottom: 50px;
+      font-size: 36px;
+      text-align: center;
     }
-    .popular_tickets {
-      padding-bottom: 100px;
-      .tickets_card_list {
-        display: flex;
-        justify-content: space-between;
-        a {
-          width: 23%;
-          display: block;
-        }
-        .pic {
-          width: 100%;
-          height: 250px;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            vertical-align: middle;
-          }
-        }
-        .txt {
-          color: $txt_color;
-          font-size: 28px;
-          padding: 20px 0;
-          text-align: center;
-          background-color: $card_bg_color;
-          span {
-            display: block;
-            &:nth-of-type(1) {
-              font-weight: 700;
-            }
-          }
-        }
-      }
+  }
+  .owl-nav {
+    display: none;
+    .owl-prev {
+      padding: 10px;
+      position: absolute;
+      top: calc(50%);
+      left: calc(50% - 645px);
     }
-    .all_tickets {
-      ul {
-        // background-color: #aaa;
-      }
-      li {
-        padding-bottom: 50px;
-        h4 {
-          color: $txt_color;
-          padding: 20px 50px;
-          font-weight: 700;
-          font-size: 40px;
-          background: linear-gradient(90deg, #005561 -10.81%, #A3A31E 99.18%);
-          border-radius: 20px;
-        }
-        .tickets_info {
-          color: $txt_color;
-          font-size: 26px;
-          padding: 50px 50px;
-          border-right: 1px solid $txt_color;
-          border-left: 1px solid $txt_color;
-          border-bottom: 1px solid $txt_color;
-          border-radius: 0 0 20px 20px;
-          display: grid;
-          grid-template-rows: 1fr;
-          grid-template-columns: repeat(3, 1fr) 300px;
-        }
-        span {
-          display: flex;
-        }
-        a {
-          margin-left: auto;
-          font-size: 30px;
-          font-weight: 700;
-          color: $txt_color;
-          display: inline-block;
-          &:nth-of-type(1) {
-            // cursor: not-allowed;
-          }
-          &:hover {
-            color: #34DAC1;
-          }
-          i {
-            font-size: 30px;
-            padding: 0 20px;
-          }
-        }
-      }
-    }
+  }
+}
+.owl-theme .owl-dots {
+  padding-top: 30px;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 30px;
+  height: 5px;
+}
+
+
+// playlist區
+.playlist {
+  color: #fff;
+  padding: 100px 0;
+}
+.marquee {
+  padding: 50px 0;
+  width: 100%;
+  .marquee_wrap {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    // overflow: hidden;
+    position: relative;
+    height: 80px;
+  }
+  .txt {
+    position: relative;
+    color: transparent;
+    -webkit-text-stroke: 2px #9b9b9b;
+    font-size: 130px;
+    word-spacing: 80px;
+    flex-shrink: 0;
+  }
+  // .one {
+  //   animation: 
+  //   mar 10s linear 1 forwards,
+  //   mar1 20s linear 10s infinite;
+  //   &:hover {
+  //     animation-play-state: paused;
+  //     ~ .two {
+  //       animation-play-state: paused;
+  //     }
+  //   }
+  // }
+  // .two {
+  //   animation: mar2 20s linear infinite;
+  // }
+}
+
+@keyframes mar {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+@keyframes mar1 {
+  from {
+    left: 100%;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes mar2 {
+  from {
+    left: 0;
+  }
+  to {
+    left: -200%;
   }
 }

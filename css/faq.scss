@@ -21,6 +21,10 @@ header {
   width: 100%;
   position: relative;
   .hamburger_menu {
+    -webkit-transition-duration: 1.65s;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transition-delay: 0s;
+    // transition: 1s linear;
     font-family: $main_text_font;
     width: 60px;
     height: 100vh;
@@ -94,6 +98,7 @@ header {
         right: 60px;
       }
       ~ .hamburger_menu .menu_btn {
+        border: 1px solid $card_bg_color;
         &:before {
           transform: rotate(45deg);
           transform-origin: left bottom;
@@ -107,6 +112,20 @@ header {
           top: 70%;
         }
       }
+      ~ .hamburger_menu {
+        background: #FEFCF1;
+        border-left: 1px solid $title_color;
+      }
+      ~ .hamburger_menu .menu_btn_wrap span{
+        background: linear-gradient(180deg, #57AD6A 0%, #84CC47 41.15%, #0DE2FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      ~ .hamburger_menu h2 {
+        background: linear-gradient(180deg, #57AD6A 0%, #84CC47 41.15%, #0DE2FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
     }
   }
   nav {
@@ -116,7 +135,7 @@ header {
     position: fixed;
     padding: 50px 0 10px 0;
     right: -360px;
-    transition: 1s;
+    transition: 0.65s;
     background-color: #FAF9F5;  
     z-index: 10;
     ul {
@@ -314,7 +333,7 @@ header {
       li {
         padding: 30px 0 30px 40px;
         font-size: 28px;
-        border-bottom: 1px solid $txt_color;
+        border-bottom: 1px solid #c5c5c5;
         &:nth-of-type(5) {
           margin-bottom: 40px;
         }
