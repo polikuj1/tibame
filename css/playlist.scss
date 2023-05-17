@@ -512,6 +512,7 @@ header {
       height: 160px;
       margin: auto;
       position: relative;
+      transition: .5s;
       cursor: pointer;
       &:hover {
         filter: brightness(120%);
@@ -527,6 +528,7 @@ header {
         background-color: $main_bg_color;
         border-radius: 50%;
         position: absolute;
+        z-index: 3;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
