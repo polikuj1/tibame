@@ -507,20 +507,29 @@ header {
   }
   .cd {
     width: 17%;
+    &:hover {
+      .pic {
+        filter: brightness(120%);
+      }
+      .title {
+        background-color: $txt_color;
+        color: #000;
+      }
+    }
     .pic {
       width: 160px;
       height: 160px;
       margin: auto;
       position: relative;
-      transition: .5s;
+      transition: 1s;
       cursor: pointer;
-      &:hover {
-        filter: brightness(120%);
-        ~ .title {
-          background-color: #4EF8EB;
-          color: #000;
-        }
-      }
+      // &:hover {
+        
+      //   ~ .title {
+      //     background-color: #4EF8EB;
+      //     color: #000;
+      //   }
+      // }
       &::before {
         content: '';
         width: 30px;
@@ -545,6 +554,14 @@ header {
       margin-top: 20px;
       padding: 5px;
       display: inline-block;
+      &:hover {
+        background-color: $txt_color;
+        color: $main_bg_color;
+      }
+    }
+    .title_hover {
+      background-color: $txt_color;
+      color: $main_bg_color;
     }
   }
   .rotate {

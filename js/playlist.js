@@ -1,5 +1,6 @@
-const cd = document.querySelectorAll('.cd .pic');
-console.log(cd);
+const cd = document.querySelectorAll('.cd .pic img');
+const cdTitle = document.querySelectorAll('.cd .title');
+console.log(cdTitle);
 cd.forEach(item => {
   item.addEventListener('click', cdRotate);
 })
@@ -13,15 +14,17 @@ function cdRotate(e) {
     if(item.dataset.cd === id) {
       isPlay = 1;
       playMusic(index);
+      txtHover(index);
       if(isRotate === 0) {
         console.log('判斷是否正在旋轉');
         isRotate = 1;
         interval = setInterval(function() {
-            angle += 5;
+            angle += 0.5;
             if(angle > 360) {angle = 0};
             item.style.transform = `rotate(${angle}deg)`;
-          },50);
+          },10);
       } else {
+        console.log(angle);
         clearInterval(interval);
         isRotate = 0;
         console.log('解除定時');
@@ -32,7 +35,7 @@ function cdRotate(e) {
   })
 }
 
-const src = ['Vaundy', '愛', 'Aimer', 'milet', 'YOASOBI'];
+const src = ['Vaundy', '愛', 'Ado', 'milet', 'YOASOBI'];
 const audio = [
   {
     audio: document.createElement('audio'),
@@ -71,4 +74,14 @@ function playMusic(index) {
     }
   })
   
+}
+
+function txtHover(index) {
+  cdTitle.forEach((item, order) => {
+    if(index === order) {
+      item.classList.add('title_hover');
+    } else {
+      item.classList.remove('title_hover');
+    }
+  })
 }

@@ -482,19 +482,20 @@ header .about_title h2::after {
 .listen_more .cd {
   width: 17%;
 }
+.listen_more .cd:hover .pic {
+  filter: brightness(120%);
+}
+.listen_more .cd:hover .title {
+  background-color: #FAF9F5;
+  color: #000;
+}
 .listen_more .cd .pic {
   width: 160px;
   height: 160px;
   margin: auto;
   position: relative;
+  transition: 1s;
   cursor: pointer;
-}
-.listen_more .cd .pic:hover {
-  filter: brightness(120%);
-}
-.listen_more .cd .pic:hover ~ .title {
-  background-color: #4EF8EB;
-  color: #000;
 }
 .listen_more .cd .pic::before {
   content: "";
@@ -503,6 +504,7 @@ header .about_title h2::after {
   background-color: #0F0F0F;
   border-radius: 50%;
   position: absolute;
+  z-index: 3;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -519,6 +521,14 @@ header .about_title h2::after {
   margin-top: 20px;
   padding: 5px;
   display: inline-block;
+}
+.listen_more .cd .title:hover {
+  background-color: #FAF9F5;
+  color: #0F0F0F;
+}
+.listen_more .cd .title_hover {
+  background-color: #FAF9F5;
+  color: #0F0F0F;
 }
 .listen_more .rotate {
   animation: rotate 10s linear infinite;
