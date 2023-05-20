@@ -6,14 +6,18 @@ const progress_current = document.querySelector('.current_time');
 cd.forEach(item => {
   item.addEventListener('click', cdRotate);
 })
-let angle = 0;
+let angle = [0,0,0,0,0];
 let isRotate = 0;
 let interval;
+
 let isPlay = 0;
+let cdOrder;
 function cdRotate(e) {
   const id = e.target.dataset.cd;
   cd.forEach((item,index) => {
     if(item.dataset.cd === id) {
+      cdOrder = index;
+      console.log(cdOrder);
       isPlay = 1;
       playMusic(index);
       txtHover(index);
@@ -22,10 +26,10 @@ function cdRotate(e) {
         console.log('判斷是否正在旋轉');
         isRotate = 1;
         interval = setInterval(function() {
-            angle += 0.5;
-            if(angle > 360) {angle = 0};
-            item.style.transform = `rotate(${angle}deg)`;
-          },10);
+          angle[index] += 0.5;
+          if(angle[index] > 360) {angle[index] = 0};
+          item.style.transform = `rotate(${angle[index]}deg)`;
+        },10);
       } else {
         // console.log(angle);
         clearInterval(interval);
@@ -34,6 +38,8 @@ function cdRotate(e) {
         isPlay = 0;
         playMusic(index);
       }
+    } else {
+      
     }
   })
 }
@@ -61,8 +67,8 @@ const audio = [
 
 
 let perProgress;
-let playLength = 0;
-
+let playLength = [0,0,0,0,0];
+let totalDuration;
 audio.forEach((item,index) => {
   item.audio.src = `../playlist/${src[index]}.mp3`;
   item.audio.addEventListener('ended', () => {
@@ -72,13 +78,14 @@ audio.forEach((item,index) => {
     isPlay = 0;
   })
   item.audio.addEventListener('playing', () => {
-    
-    console.log(item.audio.duration);
-    const totalDuration = item.audio.duration;
-    perProgress = 100 / totalDuration;
-    console.log(perProgress);
-    console.log(item.audio.currentTime, '播放到幾秒');
-    loadingBar(true);
+    if(cdOrder === index) {
+      console.log(item.audio.duration);
+      totalDuration = item.audio.duration;
+      perProgress = 100 / totalDuration;
+      console.log(perProgress);
+      console.log(item.audio.currentTime, '播放到幾秒');
+      loadingBar(true);
+    }
     // setInterval(() => {
     //   playLength += perProgress;
     //   progress_current.style.width = `${playLength}%`;
@@ -123,12 +130,21 @@ let timer;
 function loadingBar(playOrPause) {
   if(playOrPause) {
     timer = setInterval(() => {
-      playLength += perProgress;
-      progress_current.style.width = `${playLength}%`;
+      playLength[cdOrder] += perProgress;
+      progress_current.style.width = `${playLength[cdOrder]}%`;
     }, 1000);
     console.log('進度條加載');
   } else {
     clearInterval(timer);
     console.log('暫停進度條');
   }
+}
+
+progress_container.addEventListener('click', setProgress);
+function setProgress(e) {
+  const width = this.clientWidth; 
+  console.log(width);
+  const clickX = e.clientX;
+  console.log(clickX);
+  
 }
