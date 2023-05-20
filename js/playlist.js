@@ -1,6 +1,8 @@
 const cd = document.querySelectorAll('.cd .pic img');
 const cdTitle = document.querySelectorAll('.cd .title');
-console.log(cdTitle);
+const progress_container = document.querySelector('.progress_container');
+const progress_current = document.querySelector('.current_time');
+// console.log(cdTitle);
 cd.forEach(item => {
   item.addEventListener('click', cdRotate);
 })
@@ -15,6 +17,7 @@ function cdRotate(e) {
       isPlay = 1;
       playMusic(index);
       txtHover(index);
+      progress_container.style.display = 'block';
       if(isRotate === 0) {
         console.log('判斷是否正在旋轉');
         isRotate = 1;
@@ -24,7 +27,7 @@ function cdRotate(e) {
             item.style.transform = `rotate(${angle}deg)`;
           },10);
       } else {
-        console.log(angle);
+        // console.log(angle);
         clearInterval(interval);
         isRotate = 0;
         console.log('解除定時');
@@ -34,6 +37,8 @@ function cdRotate(e) {
     }
   })
 }
+
+
 
 const src = ['Vaundy', '愛', 'Ado', 'milet', 'YOASOBI'];
 const audio = [
@@ -53,14 +58,42 @@ const audio = [
     audio: document.createElement('audio'),
   },
 ];
+
+
+let perProgress;
+let playLength = 0;
+
 audio.forEach((item,index) => {
   item.audio.src = `../playlist/${src[index]}.mp3`;
+  item.audio.addEventListener('ended', () => {
+    clearInterval(interval);
+    isRotate = 0;
+    console.log('解除定時');
+    isPlay = 0;
+  })
+  item.audio.addEventListener('playing', () => {
+    
+    console.log(item.audio.duration);
+    const totalDuration = item.audio.duration;
+    perProgress = 100 / totalDuration;
+    console.log(perProgress);
+    console.log(item.audio.currentTime, '播放到幾秒');
+    loadingBar(true);
+    // setInterval(() => {
+    //   playLength += perProgress;
+    //   progress_current.style.width = `${playLength}%`;
+    // }, 1000);
+  })
+  item.audio.addEventListener('pause', () => {
+    console.log(item.audio.currentTime);
+    loadingBar(0, 0, false);
+  })
 })
 
 function playMusic(index) {
-  console.log(index);
+  // console.log(index);
   audio.forEach((item, order) => {
-    console.log(item,order);
+    // console.log(item,order);
     if(index === order) {
       if(isPlay) {
         console.log("開始撥放");
@@ -84,4 +117,18 @@ function txtHover(index) {
       item.classList.remove('title_hover');
     }
   })
+}
+
+let timer;
+function loadingBar(playOrPause) {
+  if(playOrPause) {
+    timer = setInterval(() => {
+      playLength += perProgress;
+      progress_current.style.width = `${playLength}%`;
+    }, 1000);
+    console.log('進度條加載');
+  } else {
+    clearInterval(timer);
+    console.log('暫停進度條');
+  }
 }
