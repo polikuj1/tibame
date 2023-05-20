@@ -259,6 +259,7 @@ header .about_title h2::after {
 .intro_us {
   width: 100%;
   padding: 200px 0 100px 0;
+  overflow: hidden;
 }
 .intro_us .intro_wrap {
   width: 80%;

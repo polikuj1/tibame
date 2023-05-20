@@ -792,7 +792,7 @@ header {
     margin: auto;
     text-align: right;
     .news_group {
-      width: 1000px;
+      width: 1200px;
       margin-left: auto;
       background-color: $second_bg_color;
     }
@@ -802,6 +802,7 @@ header {
       position: relative;
       display: flex;
       flex-wrap: wrap;
+      left: -300px;
     }
     h2 {
       font-family: $main_text_font;
@@ -821,11 +822,6 @@ header {
         bottom: -20px;
         display: block;
       }
-    }
-    .news_card_list {
-      display: flex;
-      position: relative;
-      left: -500px;
     }
     .news_card {
       width: 440px;
@@ -884,6 +880,7 @@ header {
         transform: scale(1);
         vertical-align: middle;
         transition: .5s;
+        object-fit: cover;
       }
     }
     .news_box {
@@ -1114,8 +1111,8 @@ header {
       position: relative;
       .decoration {
         position: absolute;
-        bottom: -230px;
-        left: 0;
+        top: -190px;
+        right: 50px;
       }
       &:hover {
         &::after {

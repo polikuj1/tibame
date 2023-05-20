@@ -744,7 +744,7 @@ header .banner .scroll span::after {
   text-align: right;
 }
 .latest_news .news_wrap .news_group {
-  width: 1000px;
+  width: 1200px;
   margin-left: auto;
   background-color: #201F21;
 }
@@ -754,6 +754,7 @@ header .banner .scroll span::after {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+  left: -300px;
 }
 .latest_news .news_wrap h2 {
   font-family: "Montserrat", sans-serif;
@@ -773,11 +774,6 @@ header .banner .scroll span::after {
   position: absolute;
   bottom: -20px;
   display: block;
-}
-.latest_news .news_wrap .news_card_list {
-  display: flex;
-  position: relative;
-  left: -500px;
 }
 .latest_news .news_wrap .news_card {
   width: 440px;
@@ -836,6 +832,8 @@ header .banner .scroll span::after {
   transform: scale(1);
   vertical-align: middle;
   transition: 0.5s;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .latest_news .news_wrap .news_box {
   padding: 50px 50px 0 50px;
@@ -1051,8 +1049,8 @@ header .banner .scroll span::after {
 }
 .interview .interview_card_row .pic .decoration {
   position: absolute;
-  bottom: -230px;
-  left: 0;
+  top: -190px;
+  right: 50px;
 }
 .interview .interview_card_row .pic:hover::after {
   height: 100%;
