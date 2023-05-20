@@ -15,7 +15,10 @@ $main_text_font: 'Montserrat', sans-serif;
 body {
   background-color: $main_bg_color;
 }
-
+img {
+  width: 100%;
+  height: 100%;
+}
 // header區
 header {
   width: 100%;
@@ -323,49 +326,119 @@ header {
       }
     }
     .all_tickets {
-      ul {
-        // background-color: #aaa;
+      .tickets_card_list {
+        display: flex;
+        padding-top: 100px;
+        flex-wrap: wrap;
+        gap: 100px;
       }
-      li {
-        padding-bottom: 50px;
+      .tickets_card {
+        width: 40%;
+        height: 350px;
+        margin: auto;
+        // padding: 30px;
+        display: flex;
+        background: linear-gradient(90.72deg, #6BE686 -12.34%, rgba(132, 204, 71, 0.703125) 58.86%, rgba(13, 226, 255, 0.4) 114.25%);
+        border-radius: 30px;
+        position: relative;
+        &:first-child {
+          &::before {
+            content: 'TICKETS';
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 120px;
+            left: -250px;
+            top: 110px;
+            position: absolute;
+            z-index: -1;
+            transform: rotate(270deg);
+          }
+        }
+        &:last-child {
+          &::before {
+            content: 'TICKETS';
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 120px;
+            left: -100px;
+            bottom: -85px;
+            position: absolute;
+            z-index: -1;
+          }
+        }
+      }
+      .title {
+        // background: url('../image/concert.jpg') no-repeat center / cover;
+        padding: 30px;
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .water_mark {
+          width: 100%;
+          height: 100%;
+          background: url('../image/concert.jpg') no-repeat center / cover;
+          position: absolute;
+          opacity: .5;
+          left: 0;
+          top: 0;
+          z-index: -1;
+        }
+        .logo {
+          width: 100px;
+          height: 60px;
+        }
         h4 {
-          color: $txt_color;
-          padding: 20px 50px;
-          font-weight: 700;
-          font-size: 40px;
-          background: linear-gradient(90deg, #005561 -10.81%, #A3A31E 99.18%);
-          border-radius: 20px;
-        }
-        .tickets_info {
-          color: $txt_color;
-          font-size: 26px;
-          padding: 50px 50px;
-          border-right: 1px solid $txt_color;
-          border-left: 1px solid $txt_color;
-          border-bottom: 1px solid $txt_color;
-          border-radius: 0 0 20px 20px;
-          display: grid;
-          grid-template-rows: 1fr;
-          grid-template-columns: repeat(3, 1fr) 300px;
-        }
-        span {
-          display: flex;
-        }
-        a {
-          margin-left: auto;
-          font-size: 30px;
+          margin-top: auto;
+          font-size: 48px;
           font-weight: 700;
           color: $txt_color;
-          display: inline-block;
-          &:nth-of-type(1) {
-            // cursor: not-allowed;
+        }
+      }
+      .tickets_info {
+        width: 35%;
+        padding: 30px 7%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-left: 2px dashed $main_bg_color;
+        position: relative;
+        &::before {
+          content: '';
+          width: 40px;
+          height: 40px;
+          background-color: $main_bg_color;
+          border-radius: 50%;
+          position: absolute;
+          left: -20px;
+          top: -25px;
+        }
+        &::after {
+          content: '';
+          width: 40px;
+          height: 40px;
+          background-color: $main_bg_color;
+          border-radius: 50%;
+          position: absolute;
+          left: -20px;
+          bottom: -25px;
+        }
+      }
+      .qrcode {
+        width: 80px;
+        height: 75px;
+      }
+      span {
+        color: $txt_color;
+        font-size: 18px;
+        cursor: pointer;
+        &:nth-of-type(3) {
+          span {
+            font-size: 24px;
+            color: $txt_border;
           }
-          &:hover {
-            color: #34DAC1;
-          }
-          i {
-            font-size: 30px;
-            padding: 0 20px;
+          img {
+            width: 27px;
+            height: 29px;
+            margin-right: 20px;
           }
         }
       }

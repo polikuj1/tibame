@@ -10,6 +10,11 @@ body {
   background-color: #0F0F0F;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+}
+
 header {
   width: 100%;
   position: relative;
@@ -307,43 +312,111 @@ header .about_title h2::after {
 .tickets .tickets_wrap .popular_tickets .tickets_card_list .txt span:nth-of-type(1) {
   font-weight: 700;
 }
-.tickets .tickets_wrap .all_tickets li {
-  padding-bottom: 50px;
-}
-.tickets .tickets_wrap .all_tickets li h4 {
-  color: #FAF9F5;
-  padding: 20px 50px;
-  font-weight: 700;
-  font-size: 40px;
-  background: linear-gradient(90deg, #005561 -10.81%, #A3A31E 99.18%);
-  border-radius: 20px;
-}
-.tickets .tickets_wrap .all_tickets li .tickets_info {
-  color: #FAF9F5;
-  font-size: 26px;
-  padding: 50px 50px;
-  border-right: 1px solid #FAF9F5;
-  border-left: 1px solid #FAF9F5;
-  border-bottom: 1px solid #FAF9F5;
-  border-radius: 0 0 20px 20px;
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(3, 1fr) 300px;
-}
-.tickets .tickets_wrap .all_tickets li span {
+.tickets .tickets_wrap .all_tickets .tickets_card_list {
   display: flex;
+  padding-top: 100px;
+  flex-wrap: wrap;
+  gap: 100px;
 }
-.tickets .tickets_wrap .all_tickets li a {
-  margin-left: auto;
-  font-size: 30px;
+.tickets .tickets_wrap .all_tickets .tickets_card {
+  width: 40%;
+  height: 350px;
+  margin: auto;
+  display: flex;
+  background: linear-gradient(90.72deg, #6BE686 -12.34%, rgba(132, 204, 71, 0.703125) 58.86%, rgba(13, 226, 255, 0.4) 114.25%);
+  border-radius: 30px;
+  position: relative;
+}
+.tickets .tickets_wrap .all_tickets .tickets_card:first-child::before {
+  content: "TICKETS";
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 120px;
+  left: -250px;
+  top: 110px;
+  position: absolute;
+  z-index: -1;
+  transform: rotate(270deg);
+}
+.tickets .tickets_wrap .all_tickets .tickets_card:last-child::before {
+  content: "TICKETS";
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 120px;
+  left: -100px;
+  bottom: -85px;
+  position: absolute;
+  z-index: -1;
+}
+.tickets .tickets_wrap .all_tickets .title {
+  padding: 30px;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.tickets .tickets_wrap .all_tickets .title .water_mark {
+  width: 100%;
+  height: 100%;
+  background: url("../image/concert.jpg") no-repeat center/cover;
+  position: absolute;
+  opacity: 0.5;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.tickets .tickets_wrap .all_tickets .title .logo {
+  width: 100px;
+  height: 60px;
+}
+.tickets .tickets_wrap .all_tickets .title h4 {
+  margin-top: auto;
+  font-size: 48px;
   font-weight: 700;
   color: #FAF9F5;
-  display: inline-block;
 }
-.tickets .tickets_wrap .all_tickets li a:hover {
-  color: #34DAC1;
+.tickets .tickets_wrap .all_tickets .tickets_info {
+  width: 35%;
+  padding: 30px 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 2px dashed #0F0F0F;
+  position: relative;
 }
-.tickets .tickets_wrap .all_tickets li a i {
-  font-size: 30px;
-  padding: 0 20px;
+.tickets .tickets_wrap .all_tickets .tickets_info::before {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: #0F0F0F;
+  border-radius: 50%;
+  position: absolute;
+  left: -20px;
+  top: -25px;
+}
+.tickets .tickets_wrap .all_tickets .tickets_info::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: #0F0F0F;
+  border-radius: 50%;
+  position: absolute;
+  left: -20px;
+  bottom: -25px;
+}
+.tickets .tickets_wrap .all_tickets .qrcode {
+  width: 80px;
+  height: 75px;
+}
+.tickets .tickets_wrap .all_tickets span {
+  color: #FAF9F5;
+  font-size: 18px;
+  cursor: pointer;
+}
+.tickets .tickets_wrap .all_tickets span:nth-of-type(3) span {
+  font-size: 24px;
+  color: #DDCB2A;
+}
+.tickets .tickets_wrap .all_tickets span:nth-of-type(3) img {
+  width: 27px;
+  height: 29px;
+  margin-right: 20px;
 }/*# sourceMappingURL=tickets.css.map */
