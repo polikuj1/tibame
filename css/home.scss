@@ -14,11 +14,12 @@ $chinese_txt_font: 'Noto Sans TC', sans-serif;
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
-  font-family: $chinese_txt_font;
+  font-family: $chinese_txt_font, $main_text_font;
 }
 
 body {
   background-color: $main_bg_color;
+  // overflow: hidden;
 }
 // 標題、橫幅區塊
 header {
@@ -118,7 +119,6 @@ header {
     }
   }
   nav {
-    font-family: $main_text_font;
     width: 360px;
     height: 100%;
     position: fixed;
@@ -190,6 +190,7 @@ header {
         padding: 18px 18px 18px 0;
         display: inline-block;
         font-weight: 700;
+        font-family: $main_text_font;
         position: relative;
         &::after {
           content: '';

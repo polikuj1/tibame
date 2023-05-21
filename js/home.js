@@ -1,68 +1,3 @@
-// header區域
-// const header = document.querySelector('.header');
-// window.addEventListener('scroll', (e) => {
-//   if (window.scrollY > 80) {
-//     header.style.top = "0px";
-//     header.style.backgroundColor = "#F1F0F0";
-//   } else {
-//     header.style.top = "10px";
-//     header.style.backgroundColor = "rgba(255, 255, 255, .2)";
-//   }
-// })
-
-// banner區域
-// const banner_btn_right = document.querySelector('.banner_btn .right');
-// const banner_btn_left = document.querySelector('.banner_btn .left');
-// const banner_pic = document.querySelectorAll('.banner_pic .pic');
-// const slogan = document.querySelectorAll('.slogan_item');
-
-// let count = 0;
-// banner_btn_right.addEventListener('click',() => {
-//   count++;
-//   if (count > 4) {
-//     count = 0
-//   }
-//   banner_pic.forEach((item, index) => {
-//     if (index === count) {
-//       item.style.display = 'block';
-//       item.classList.add('fade');
-//     } else {
-//       item.style.display = 'none';
-//       item.classList.remove('fade');
-//     }
-//   })
-//   slogan.forEach((item, index) => {
-//     if (index === count) {
-//       item.style.left = '10%';
-//     } else {
-//       item.style.left = '-100%';
-//     }
-//   })
-// }, false);
-// banner_btn_left.addEventListener('click', () => {
-//   count--;
-//   if (count < 0) {
-//     count = 4;
-//   }
-//   banner_pic.forEach((item, index) => {
-//     if (index === count) {
-//       item.style.display = 'block';
-//       item.classList.add('fade');
-//     } else {
-//       item.style.display = 'none';
-//       item.classList.remove('fade');
-//     }
-//   })
-//   slogan.forEach((item, index) => {
-//     if (index === count) {
-//       item.style.left = '10%';
-//     } else {
-//       item.style.left = '-100%';
-//     }
-//   })
-// }, false);
-
-
 // 倒數計時
 
 const countdown_day = document.querySelector('.countdown_day');
@@ -199,3 +134,4 @@ video.addEventListener('click', () => {
 youtubeModal_btn.addEventListener('click', () => {
   youtubeModal.style.display = 'none';
 })
+

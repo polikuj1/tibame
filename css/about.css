@@ -12,6 +12,42 @@ body {
   background-color: #0F0F0F;
 }
 
+.pointer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.525);
+  position: absolute;
+  pointer-events: none;
+  z-index: 999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+}
+
+.pointer1 {
+  transition: 0.05s;
+}
+
+.pointer2 {
+  transition: 0.1s;
+}
+
+.pointer3 {
+  transition: 0.15s;
+}
+
+.pointer4 {
+  transition: 0.2s;
+}
+
+.pointer5 {
+  transition: 0.25s;
+}
+
+.pointer6 {
+  transition: 0.3s;
+}
+
 header {
   width: 100%;
   position: relative;

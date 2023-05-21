@@ -18,6 +18,38 @@ $chinese_txt_font: 'Noto Sans TC', sans-serif;
 body {
   background-color: $main_bg_color;
 }
+// 滑鼠移動
+.pointer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  // background-color: rgb(57, 56, 56);
+  border: 1px solid rgba(255, 255, 255, 0.525);
+  position: absolute;
+  pointer-events: none;
+  z-index: 999;
+  transform: translate(-50%,-50%);
+  mix-blend-mode: difference;
+}
+.pointer1 {
+  transition: 0.05s;
+}
+.pointer2 {
+  transition: 0.1s;
+}
+.pointer3 {
+  transition: 0.15s;
+}
+.pointer4 {
+  transition: 0.2s;
+}
+.pointer5 {
+  transition: 0.25s;
+}
+.pointer6 {
+  transition: 0.3s;
+}
+
 
 // header區
 header {
