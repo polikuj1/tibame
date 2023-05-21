@@ -19,10 +19,11 @@ function cdRotate(e) {
       cdOrder = index;
       console.log(cdOrder);
       isPlay = 1;
-      playMusic(index);
+      
       txtHover(index);
       progress_container.style.display = 'block';
       if(isRotate === 0) {
+        playMusic(index);
         console.log('判斷是否正在旋轉');
         isRotate = 1;
         interval = setInterval(function() {
@@ -73,17 +74,19 @@ audio.forEach((item,index) => {
   item.audio.src = `../playlist/${src[index]}.mp3`;
   item.audio.addEventListener('ended', () => {
     clearInterval(interval);
+    clearInterval(timer);
+    playLength[cdOrder] = 0;
     isRotate = 0;
     console.log('解除定時');
     isPlay = 0;
   })
   item.audio.addEventListener('playing', () => {
     if(cdOrder === index) {
-      console.log(item.audio.duration);
+      console.log(item.audio.duration,'總秒數');
       totalDuration = item.audio.duration;
-      perProgress = 100 / totalDuration;
-      console.log(perProgress);
-      console.log(item.audio.currentTime, '播放到幾秒');
+      perProgress = (100 / totalDuration);
+      console.log(perProgress,'每秒要跑得趴數');
+      // console.log(item.audio.currentTime, '播放到幾秒');
       loadingBar(true);
     }
     // setInterval(() => {
@@ -93,7 +96,13 @@ audio.forEach((item,index) => {
   })
   item.audio.addEventListener('pause', () => {
     console.log(item.audio.currentTime);
-    loadingBar(0, 0, false);
+    loadingBar(false);
+  })
+  item.audio.addEventListener('timeupdate', () => {
+    if (cdOrder === index) {
+      playLength[cdOrder] = (item.audio.currentTime / totalDuration) * 100;
+      progress_current.style.width = `${playLength[cdOrder]}%`;
+    }
   })
 })
 
@@ -129,6 +138,8 @@ function txtHover(index) {
 let timer;
 function loadingBar(playOrPause) {
   if(playOrPause) {
+    clearInterval(timer);
+    console.log(playLength[cdOrder]);
     timer = setInterval(() => {
       playLength[cdOrder] += perProgress;
       progress_current.style.width = `${playLength[cdOrder]}%`;
@@ -143,8 +154,11 @@ function loadingBar(playOrPause) {
 progress_container.addEventListener('click', setProgress);
 function setProgress(e) {
   const width = this.clientWidth; 
-  console.log(width);
-  const clickX = e.clientX;
-  console.log(clickX);
-  
+  // console.log(width);
+  const clickX = e.pageX;
+  // console.log(clickX);
+  audio[cdOrder].audio.currentTime = clickX / width * totalDuration;
+  playLength[cdOrder] = `${clickX / width * 100}`;
+  progress_current.style.width = `${playLength[cdOrder]}%`;
+  // console.log(playLength[cdOrder]);
 }
