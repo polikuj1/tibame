@@ -453,23 +453,19 @@ header {
   }
   .marquee_hashtag {
     width: 100%;
+    margin-top: 30px;
     overflow: hidden;
     .hashtag_wrap {
       width: 1920px;
-      // position: relative;
       display: flex;
       gap: 20px;
-      // overflow: hidden;
+      overflow: hidden;
       height: 80px;
       .one_hashtag {
-        // position: absolute;
-        // left: 0;
-        // top: 20px;
         flex-shrink: 0;
         display: flex;
         align-items: start;
         gap: 15px;
-        position: relative;
         span {
           padding: 8px;
           background-color: $main_txt_color;
@@ -479,23 +475,19 @@ header {
       }
       .re_hashtag {
         animation: 
-        hashtag2 100s linear 1 forwards,
-        hashtag3 100s linear 100s infinite;
+        hashtag1 140s linear -70s infinite,
       }
       .hashtag {
         animation: 
-        hashtag 50s linear 1 forwards,
-        hashtag1 100s linear 50s infinite;
+        hashtag 140s linear infinite;
       }
       .re_hashtag1 {
         animation: 
-        hashtag2 140s linear 1 forwards,
-        hashtag3 140s linear 140s infinite;
+        hashtag1 120s linear -60s infinite,
       }
       .hashtag1 {
         animation: 
-        hashtag 70s linear 1 forwards,
-        hashtag1 140s linear 70s infinite;
+        hashtag 120s linear infinite;
       }
     }
   }
@@ -521,18 +513,18 @@ header {
 
 @keyframes hashtag {
   from {
-    left: 0;
+    transform: translateX(100%);
   }
   to {
-    left: -110%;
+    transform: translateX(-100%);
   }
 }
 @keyframes hashtag1 {
   from {
-    left: 100%;
+    transform: translateX(0%);
   }
   to {
-    left: -110%;
+    transform: translateX(-200%);
   }
 }
 @keyframes hashtag2 {
@@ -1340,6 +1332,7 @@ header {
     }
   }
 }
+
 .modal {
   position: fixed;
   z-index: 11;
@@ -1348,14 +1341,26 @@ header {
   background-color: #000;
   display: none;
   .youtube {
-    width: 560px;
-    height: 315px;
+    width: 80%;
     position: absolute;
-    top: 0;
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(-3%);
     right: 0;
     left: 0;
     margin: auto;
+    background-color: #aaa;
+    &::after {
+      content: '';
+      width: 100%;
+      padding-bottom: 56.25%;
+      display: block;
+    }
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
   }
   button {
     position: absolute;
