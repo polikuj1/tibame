@@ -151,7 +151,7 @@ window.addEventListener('mousemove', (e) => {
   hashtag.forEach((item) => {
     // item.addEventListener('mouseenter', mouseMove);
     item.addEventListener('mousemove', mouseMove);
-    item.addEventListener('mouseout', mouseLeave);
+    item.addEventListener('mouseleave', mouseLeave);
   })
   function mouseMove(e) {
     // const id = parseInt(e.target.dataset.id);
@@ -175,3 +175,15 @@ window.addEventListener('mousemove', (e) => {
   }
 })
 
+// goTop按鈕
+
+const topBtn = document.querySelector('.go_top');
+
+window.addEventListener("scroll", function(){
+ let scrollY = this.scrollY;
+ if(scrollY > 1200) {
+  topBtn.style.display = 'block';
+ } else {
+  topBtn.style.display = 'none';
+ }
+});

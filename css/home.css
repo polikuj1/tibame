@@ -8,6 +8,10 @@
   font-family: "Noto Sans TC", sans-serif, "Montserrat", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #0F0F0F;
 }
@@ -1455,4 +1459,32 @@ footer .footer_copy span:nth-of-type(1) {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.go_top {
+  width: 150px;
+  height: 150px;
+  display: none;
+  position: fixed;
+  z-index: 15;
+  bottom: 50px;
+  right: 80px;
+  animation: rotateInfinite 2s linear infinite;
+}
+.go_top:hover {
+  animation-play-state: paused;
+}
+.go_top img {
+  width: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+@keyframes rotateInfinite {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
 }/*# sourceMappingURL=home.css.map */
