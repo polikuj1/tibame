@@ -7,6 +7,8 @@ $card_bg_color: #5F5F5F;
 $main_text_font: 'Montserrat', sans-serif;
 $chinese_txt_font: 'Noto Sans TC', sans-serif;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap');
+@import url(./footer.css);
+
 * {
   margin: 0;
   padding: 0;
@@ -344,6 +346,21 @@ header {
         background: linear-gradient(90.72deg, #6BE686 -12.34%, rgba(132, 204, 71, 0.703125) 58.86%, rgba(13, 226, 255, 0.4) 114.25%);
         border-radius: 30px;
         position: relative;
+        &:nth-child(2) {
+          background: linear-gradient(90deg, #84faaf95, #8fd2f4b8);
+        }
+        &:nth-child(3) {
+          background: linear-gradient(90deg, #43e97ab3, #38f9d6c3);
+        }
+        &:nth-child(4) {
+          background: linear-gradient(90deg, #96fbc3a3, #efe948b2);
+        }
+        &:nth-child(5) {
+          background: linear-gradient(90deg, #58ffe0d3, #85cdeeab);
+        }
+        &:nth-child(6) {
+          background: linear-gradient(90deg, #abecd69d, #fbed96a0);
+        }
         &:first-child {
           &::before {
             content: 'TICKETS';
@@ -354,17 +371,6 @@ header {
             position: absolute;
             z-index: -1;
             transform: rotate(270deg);
-          }
-        }
-        &:last-child {
-          &::before {
-            content: 'TICKETS';
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 120px;
-            left: -100px;
-            bottom: -85px;
-            position: absolute;
-            z-index: -1;
           }
         }
       }

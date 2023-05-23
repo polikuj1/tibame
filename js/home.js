@@ -135,3 +135,43 @@ youtubeModal_btn.addEventListener('click', () => {
   youtubeModal.style.display = 'none';
 })
 
+// 跑馬燈圖片
+
+const hashtag = document.querySelectorAll('.one_hashtag span');
+const random = document.querySelector('.random_pic');
+const random_img = document.querySelector('.random_pic img');
+// console.log(hashtag);
+// console.log(random_img);
+
+
+let num = 5;
+window.addEventListener('mousemove', (e) => {
+  let x = e.pageX;
+  let y = e.pageY;
+  hashtag.forEach((item) => {
+    // item.addEventListener('mouseenter', mouseMove);
+    item.addEventListener('mousemove', mouseMove);
+    item.addEventListener('mouseout', mouseLeave);
+  })
+  function mouseMove(e) {
+    // const id = parseInt(e.target.dataset.id);
+    // console.log(id);
+    // hashtag.forEach((item, index) => {
+    //   console.log(index);
+    //   if(id === index+1) {
+    //     item.style.color = 'red';
+        
+    //   }
+    // })
+    random_img.src = `./image/${num}.jpg`;
+    random.style.display = 'block';
+    random.style.top = y + 'px';
+    random.style.left = x + 'px';
+    // hashtag.style.backGround = 'black';
+    // random.style.color = '#fff';
+  }
+  function mouseLeave() {
+    random.style.display = 'none';
+  }
+})
+

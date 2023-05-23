@@ -452,6 +452,7 @@ header .banner .scroll span::after {
   background-color: #FAF9F5;
   font-size: 20px;
   border-radius: 10px;
+  cursor: pointer;
 }
 .marquee .marquee_hashtag .hashtag_wrap .re_hashtag {
   animation: hashtag1 140s linear -70s infinite;
@@ -1439,4 +1440,19 @@ footer .footer_copy span:nth-of-type(1) {
   font-weight: 600;
   border-radius: 10px;
   background: linear-gradient(180deg, #95D83F 0%, rgba(91, 196, 165, 0.7) 100%);
+}
+
+.random_pic {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 12;
+  display: none;
+}
+.random_pic img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=home.css.map */

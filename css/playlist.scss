@@ -6,6 +6,8 @@ $main_bg_color: #0F0F0F;
 $card_bg_color: #5F5F5F;
 $main_text_font: 'Montserrat', sans-serif;
 $chinese_txt_font: 'Noto Sans TC', sans-serif;
+@import url(./footer.css);
+
 * {
   margin: 0;
   padding: 0;
