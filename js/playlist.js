@@ -48,7 +48,7 @@ function cdRotate(e) {
 }
 
 
-const src = ['Vaundy', '愛', 'Ado', 'milet', 'YOASOBI'];
+// const src = ['Vaundy', '愛', 'Ado', 'milet', 'YOASOBI'];
 const audio = [
   {
     audio: document.createElement('audio'),
@@ -70,7 +70,7 @@ let perProgress;
 let playLength = [0,0,0,0,0];
 let totalDuration;
 audio.forEach((item,index) => {
-  item.audio.src = `../playlist/${src[index]}.mp3`;
+  item.audio.src = `../playlist/${index + 1}.mp3`;
   item.audio.addEventListener('ended', () => {
     clearInterval(interval);
     playLength[cdOrder] = 0;
