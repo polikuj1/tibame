@@ -70,7 +70,7 @@ let perProgress;
 let playLength = [0,0,0,0,0];
 let totalDuration;
 audio.forEach((item,index) => {
-  item.audio.src = `../playlist/${index + 1}.mp3`;
+  item.audio.src = `tibame/playlist/${index + 1}.mp3`;
   item.audio.addEventListener('ended', () => {
     clearInterval(interval);
     playLength[cdOrder] = 0;
