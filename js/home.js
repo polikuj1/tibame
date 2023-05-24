@@ -178,7 +178,8 @@ window.addEventListener('mousemove', (e) => {
 // goTop按鈕
 
 const topBtn = document.querySelector('.go_top');
-
+const subscribe = document.querySelector('.footer_nav input');
+console.log(subscribe);
 window.addEventListener("scroll", function(){
  let scrollY = this.scrollY;
  if(scrollY > 1200) {
@@ -187,3 +188,11 @@ window.addEventListener("scroll", function(){
   topBtn.style.display = 'none';
  }
 });
+
+subscribe.addEventListener('focus', () => {
+  topBtn.style.display = 'none';
+})
+
+subscribe.addEventListener('blur', () => {
+  topBtn.style.display = 'block';
+})

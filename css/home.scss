@@ -121,7 +121,7 @@ header {
     }
   }
   nav {
-    width: 360px;
+    width: 320px;
     height: 100%;
     position: fixed;
     padding: 50px 0 10px 0;
@@ -142,7 +142,7 @@ header {
         -webkit-text-fill-color: transparent;
       }
       li {
-        font-size: 2em;
+        font-size: 1.2rem;
       }
       .subscribe {
         background: #FAF9F5;
@@ -172,7 +172,7 @@ header {
         button {
           background-color: transparent;
           border: none;
-          padding: 20px 60px;
+          padding: 10px 40px;
           text-align: center;
           display: block;
           font-size: 16px;
@@ -225,7 +225,7 @@ header {
           padding: 0px;
           i {
             display: inline-block;
-            padding: 20px;
+            padding: 15px;
             position: relative;
             background: #FAF9F5;
             background-clip: padding-box;
@@ -256,10 +256,16 @@ header {
     height: 100%;
     position: relative;
     .website_logo {
+      width: 120px;
+      height: 80px;
       position: absolute;
       z-index: 3;
       left: 50px;
       top: 30px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
     .banner_pic {
       width: 100%;
@@ -274,8 +280,9 @@ header {
       display: flex;
       justify-content: center;
       align-items: center;
-      left: calc(50% - 500px);
-      top: calc(50% - 200px);
+      left: calc(35%);
+      top: calc(50%);
+      transform: translate(-50%, -50%);
       .logo {
         background-color: #000000;
         text-align: center;
@@ -296,7 +303,7 @@ header {
         width: 100%;
         height: 100%;
         padding: 50px;
-        font-size: 128px;
+        font-size: 110px;
         text-shadow: 0 0 3px rgb(253, 253, 98);
         color: #fff;
         font-weight: 700;
@@ -310,7 +317,7 @@ header {
           height: 2px;
           background-color: #fff;
           top: -30px;
-          left: -108px;
+          left: -98px;
         }
         &::before {
           content: '';
@@ -407,6 +414,12 @@ header {
         }
       }
     }
+  }
+}
+
+@media screen and (min-width:1440px) { 
+  header nav ul li {
+    font-size: 2rem;
   }
 }
 
@@ -552,12 +565,12 @@ header {
   width: 100%;
   padding: 60px 0;
   .poster_wrap {
-    width: 80%;
+    max-width: 1200px;
     margin: auto;
   }
   .poster_list {
     display: flex;
-    width: 1000px;
+    width: 83.33333%;
     margin: auto;
     .pic {
       width: 460px;
@@ -602,8 +615,8 @@ header {
   padding: 30px 0 60px;
   color: $main_txt_color;
   .wrap {
-    width: 80%;;
-    padding: 60px;
+    max-width: 1200px;
+    padding: 30px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -622,11 +635,11 @@ header {
     }
     .title {
       position: relative;
-      width: 50%;
+      width: 38%;
       h2 {
         font-family: $main_text_font;
         font-weight: 700;
-        font-size: 72px;
+        font-size: 65px;
         line-height: 100px;
         font-family: 'Montserrat';
         margin-bottom: 30px;
@@ -672,7 +685,7 @@ header {
       }
     }
     table {
-      width: 50%;
+      width: 58%;
       margin-left: auto;
       background-color: #201F21;
       border-radius: 10px;
@@ -754,7 +767,7 @@ header {
           right: 5px;
           top: 50%;
           transform: translateY(-50%);
-          padding: 5px;
+          padding: 0 5px;
           background-color: $main_txt_color;
           color: $main_bg_color;
           font-size: 16px;
@@ -784,21 +797,22 @@ header {
   // background-color: $bg-color;
   padding: 60px 0;
   .news_wrap {
-    width: 80%;
+    max-width: 1200px;
     margin: auto;
     text-align: right;
     .news_group {
-      width: 1200px;
+      width: 800px;
       margin-left: auto;
       background-color: $second_bg_color;
     }
     .news_card_list {
-      width: 1440px;
+      width: 1200px;
       border-radius: 20px;
       position: relative;
       display: flex;
+      justify-content: space-evenly;
       flex-wrap: wrap;
-      left: -300px;
+      left: -400px;
     }
     h2 {
       font-family: $main_text_font;
@@ -820,7 +834,7 @@ header {
       }
     }
     .news_card {
-      width: 440px;
+      width: 360px;
       margin: 0 20px;
       position: relative;
       z-index: 2;
@@ -1249,7 +1263,7 @@ header {
   padding: 80px 0 60px 0;
   background-color: $main_bg_color;
   .media_wrap {
-    width: 1440px;
+    max-width: 1440px;
     padding-bottom: 90px;
     margin: auto;
   }
