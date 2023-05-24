@@ -373,12 +373,15 @@ header .banner .blue_mask {
 header .banner .scroll {
   position: absolute;
   z-index: 2;
-  font-size: 28px;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
   color: #FAF9F5;
   left: 50px;
   bottom: 30px;
   writing-mode: vertical-lr;
+}
+header .banner .scroll a {
+  color: #FAF9F5;
 }
 header .banner .scroll span {
   display: inline-block;
@@ -583,7 +586,7 @@ header .banner .scroll span::after {
   color: #FAF9F5;
 }
 .timetable .wrap {
-  max-width: 1200px;
+  max-width: 1440px;
   padding: 30px;
   margin: auto;
   display: flex;
@@ -757,23 +760,23 @@ header .banner .scroll span::after {
   padding: 60px 0;
 }
 .latest_news .news_wrap {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: auto;
   text-align: right;
 }
 .latest_news .news_wrap .news_group {
-  width: 800px;
+  width: 1000px;
   margin-left: auto;
   background-color: #201F21;
 }
 .latest_news .news_wrap .news_card_list {
-  width: 1200px;
+  width: 1440px;
   border-radius: 20px;
   position: relative;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  left: -400px;
+  left: -460px;
 }
 .latest_news .news_wrap h2 {
   font-family: "Montserrat", sans-serif;
@@ -795,7 +798,7 @@ header .banner .scroll span::after {
   display: block;
 }
 .latest_news .news_wrap .news_card {
-  width: 360px;
+  width: 440px;
   margin: 0 20px;
   position: relative;
   z-index: 2;
@@ -1266,8 +1269,12 @@ header .banner .scroll span::after {
   margin-left: auto;
   cursor: pointer;
 }
-.media .video_area .video_txt button span {
+.media .video_area .video_txt button:hover {
+  background-color: #4EF8EB;
+}
+.media .video_area .video_txt button a {
   padding: 0 10px;
+  font-size: 1rem;
   color: #0F0F0F;
 }
 .media .video_area .video_txt button i {

@@ -388,12 +388,15 @@ header {
     .scroll {
       position: absolute;
       z-index: 2;
-      font-size: 28px;
+      font-size: 20px;
       font-family: $main_text_font;
       color: $main_txt_color;
       left: 50px;
       bottom: 30px;
       writing-mode: vertical-lr;
+      a {
+        color: $main_txt_color;
+      }
       span {
         display: inline-block;
         width: 2px;
@@ -615,7 +618,7 @@ header {
   padding: 30px 0 60px;
   color: $main_txt_color;
   .wrap {
-    max-width: 1200px;
+    max-width: 1440px;
     padding: 30px;
     margin: auto;
     display: flex;
@@ -797,22 +800,22 @@ header {
   // background-color: $bg-color;
   padding: 60px 0;
   .news_wrap {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: auto;
     text-align: right;
     .news_group {
-      width: 800px;
+      width: 1000px;
       margin-left: auto;
       background-color: $second_bg_color;
     }
     .news_card_list {
-      width: 1200px;
+      width: 1440px;
       border-radius: 20px;
       position: relative;
       display: flex;
       justify-content: space-evenly;
       flex-wrap: wrap;
-      left: -400px;
+      left: -460px;
     }
     h2 {
       font-family: $main_text_font;
@@ -834,7 +837,7 @@ header {
       }
     }
     .news_card {
-      width: 360px;
+      width: 440px;
       margin: 0 20px;
       position: relative;
       z-index: 2;
@@ -1329,11 +1332,12 @@ header {
         align-items: center;
         margin-left: auto;
         &:hover {
-          // background-color: ;
+          background-color: $strong_color;
         }
         cursor: pointer;
-        span {
+        a {
           padding: 0 10px;
+          font-size: 1rem;
           color: $main_bg_color;
         }
         i {
