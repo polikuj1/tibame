@@ -116,7 +116,7 @@ header {
   }
   nav {
     font-family: $main_text_font;
-    width: 360px;
+    width: 320px;
     height: 100vh;
     position: fixed;
     padding: 50px 0 10px 0;
@@ -137,7 +137,7 @@ header {
         -webkit-text-fill-color: transparent;
       }
       li {
-        font-size: 28px;
+        font-size: 1.2rem;
       }
       .subscribe {
         background: #FAF9F5;
@@ -167,7 +167,7 @@ header {
         button {
           background-color: transparent;
           border: none;
-          padding: 20px 60px;
+          padding: 10px 40px;
           text-align: center;
           display: block;
           font-size: 16px;
@@ -219,7 +219,7 @@ header {
           padding: 0px;
           i {
             display: inline-block;
-            padding: 20px;
+            padding: 10px;
             position: relative;
             background: #FAF9F5;
             background-clip: padding-box;

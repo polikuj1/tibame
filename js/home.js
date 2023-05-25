@@ -179,7 +179,8 @@ window.addEventListener('mousemove', (e) => {
 
 const topBtn = document.querySelector('.go_top');
 const subscribe = document.querySelector('.footer_nav input');
-console.log(subscribe);
+const subscribe_txt = document.querySelector('.footer_nav .subscribe');
+// console.log(subscribe_txt);
 window.addEventListener("scroll", function(){
  let scrollY = this.scrollY;
  if(scrollY > 1200) {
@@ -193,6 +194,31 @@ subscribe.addEventListener('focus', () => {
   topBtn.style.display = 'none';
 })
 
-subscribe.addEventListener('blur', () => {
-  topBtn.style.display = 'block';
+// subscribe.addEventListener('blur', () => {
+//   topBtn.style.display = 'block';
+// })
+
+subscribe_txt.addEventListener('click', (e) => {
+  e.preventDefault();
+  subscribe.focus();
+})
+
+
+// 訂閱成功彈窗
+
+const subBtn = document.querySelector('.close_btn');
+const subModal = document.querySelector('.subscribe_modal');
+const subSubmit = document.querySelector('.submit');
+
+subSubmit.addEventListener('click', () => {
+  if(subscribe.value === '') {
+    subscribe.placeholder = '信箱未填寫';
+    return;
+  }
+  subModal.style.display = 'block';
+})
+subBtn.addEventListener('click', () => {
+  subModal.style.display = 'none';
+  subscribe.value = '';
+  subscribe.placeholder = '填寫信箱';
 })

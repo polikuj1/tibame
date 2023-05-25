@@ -137,7 +137,7 @@ header #menu:checked ~ .hamburger_menu .menu_btn:after {
   top: 70%;
 }
 header nav {
-  width: 360px;
+  width: 320px;
   height: 100vh;
   position: fixed;
   padding: 50px 0 10px 0;
@@ -160,7 +160,7 @@ header nav ul .text_linear {
   -webkit-text-fill-color: transparent;
 }
 header nav ul li {
-  font-size: 28px;
+  font-size: 1.2rem;
 }
 header nav ul .subscribe {
   background: #FAF9F5;
@@ -191,7 +191,7 @@ header nav ul .subscribe::after {
 header nav ul .subscribe button {
   background-color: transparent;
   border: none;
-  padding: 20px 60px;
+  padding: 10px 40px;
   text-align: center;
   display: block;
   font-size: 16px;
@@ -241,7 +241,7 @@ header nav ul .share .social_icon {
 }
 header nav ul .share .social_icon i {
   display: inline-block;
-  padding: 20px;
+  padding: 10px;
   position: relative;
   background: #FAF9F5;
   background-clip: padding-box;
