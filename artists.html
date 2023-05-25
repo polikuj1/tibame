@@ -151,29 +151,39 @@
   <!-- footer -->
   <footer>
     <div class="footer_wrap">
-      <div class="footer_logo">
+      <a href="index.html" class="footer_logo">
         <img src="image/logo.png" alt="">
-      </div>
+      </a>
       <div class="footer_nav">
-        <span><a href="">HOME</a></span>
-        <span><a href="">ABOUT</a></span>
-        <span><a href="">MUSIC FESTIVAL</a></span>
-        <span><a href="">ARTISTS</a></span>
-        <span><a href="">訂閱電子報</a></span>
-        <span><a href="">TICKETS</a></span>
-        <span><a href="">FAQ</a></span>
-        <span><a href="">PLAYLIST</a></span>
+        <span><a href="index.html">HOME</a></span>
+        <span><a href="about.html">ABOUT</a></span>
+        <span><a href="festival.html">MUSIC FESTIVAL</a></span>
+        <span><a href="artists.html">ARTISTS</a></span>
+        <span><a href="" class="subscribe">訂閱電子報</a></span>
+        <span><a href="tickets.html">TICKETS</a></span>
+        <span><a href="faq.html">FAQ</a></span>
+        <span><a href="playlist.html">PLAYLIST</a></span>
         <span><a href="">聯絡我們</a></span>
-        <span><input type="text" placeholder="輸入信箱"></span>
+        <span><input type="text" placeholder="輸入信箱"><button class="submit">送出</button></span>
       </div>
     </div>
     <div class="footer_copy">
-      <span>探索屬於你的音樂</span>
+      <a href="playlist.html">探索屬於你的音樂</a>
       <span>© 2023 Copyright - 前端練習股份有限公司 - made by musictravel。 網站純屬練習使用，並無任何商業用途。</span>
     </div>
   </footer>
+  <div class="subscribe_modal">
+    <div class="success_info">
+      <div class="close_btn"><button>X</button></div>
+      <div class="icon">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <span>訂閱成功</span>
+      <span>你將接受到最新的音樂活動資訊</span>
+    </div>
+  </div>
 
-
+  <script src="js/subModal.js"></script>
   <script src="https://kit.fontawesome.com/10662d5b44.js" crossorigin="anonymous"></script>
 </body>
 </html>
