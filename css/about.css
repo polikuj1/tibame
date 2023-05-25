@@ -29,26 +29,6 @@ body {
   transition: 0.05s;
 }
 
-.pointer2 {
-  transition: 0.1s;
-}
-
-.pointer3 {
-  transition: 0.15s;
-}
-
-.pointer4 {
-  transition: 0.2s;
-}
-
-.pointer5 {
-  transition: 0.25s;
-}
-
-.pointer6 {
-  transition: 0.3s;
-}
-
 header {
   width: 100%;
   position: relative;

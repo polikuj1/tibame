@@ -289,9 +289,11 @@ header .about_title h2::after {
   justify-content: center;
   border: none;
   background-color: rgb(0, 85, 97);
+  box-shadow: 2px 2px 5px #414141;
 }
 .festival .area_tab .active {
   background-color: #A3A31E;
+  box-shadow: 0 0 0;
 }
 .festival .festival_group .festival_intro {
   margin-top: 50px;
