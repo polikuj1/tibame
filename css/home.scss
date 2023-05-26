@@ -695,6 +695,13 @@ header {
       position: relative;
       z-index: 2;
       padding: 30px;
+      caption {
+        font-size: 45px;
+        text-transform: uppercase;
+        border-bottom: 1px solid $main_txt_color;
+        margin-bottom: 30px;
+        display: none;
+      }
       tbody {
         height: 400px;
         display: block;

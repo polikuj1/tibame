@@ -663,6 +663,13 @@ header .banner .scroll span::after {
   z-index: 2;
   padding: 30px;
 }
+.timetable .wrap table caption {
+  font-size: 45px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #FAF9F5;
+  margin-bottom: 30px;
+  display: none;
+}
 .timetable .wrap table tbody {
   height: 400px;
   display: block;
