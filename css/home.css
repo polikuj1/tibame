@@ -401,9 +401,123 @@ header .banner .scroll span::after {
   animation: scroll 3s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (max-width: 768px) {
+  header {
+    height: auto;
+  }
+  header .hamburger_menu {
+    font-family: "Montserrat", sans-serif;
+    width: 60px;
+    position: fixed;
+    z-index: 11;
+    right: 0;
+    top: 0;
+    background: none;
+  }
+  header .hamburger_menu .menu_btn_wrap {
+    padding-top: 30px;
+  }
+  header .hamburger_menu span {
+    display: none;
+  }
+  header .hamburger_menu h2 {
+    display: none;
+  }
   header nav ul li {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+  header #menu:checked ~ nav {
+    right: 0px;
+  }
+  header .banner .website_logo {
+    left: 30px;
+    width: 100px;
+    height: 60px;
+  }
+  header .banner .banner_logo {
+    position: absolute;
+    z-index: 2;
+    left: 35%;
+    top: 50%;
+  }
+  header .banner .banner_logo .logo {
+    background-color: #000000;
+    text-align: center;
+    position: relative;
+  }
+  header .banner .banner_logo .logo::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: #524C4C;
+    position: absolute;
+    left: 10px;
+    top: -10px;
+    z-index: -1;
+  }
+  header .banner .banner_logo .title {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    font-size: 2.5rem;
+    text-shadow: 0 0 3px rgb(253, 253, 98);
+    color: #fff;
+    font-weight: 700;
+  }
+  header .banner .banner_logo .title span {
+    display: block;
+  }
+  header .banner .banner_logo .title::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    top: -20px;
+    left: 0px;
+  }
+  header .banner .banner_logo .title::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    bottom: -20px;
+    left: 0px;
+  }
+  header .banner .banner_logo .side_logo {
+    display: block;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    writing-mode: vertical-lr;
+    top: 0;
+    bottom: 0;
+  }
+  header .banner .banner_logo .side_logo:nth-of-type(1) span {
+    display: none;
+  }
+  header .banner .banner_logo .side_logo:nth-of-type(2) span {
+    display: none;
+  }
+  header .banner .banner_logo .decoration {
+    position: absolute;
+    width: 1px;
+    height: 20px;
+    background-color: #fff;
+    left: 0px;
+  }
+  header .banner .banner_logo .decoration1 {
+    position: absolute;
+    width: 1px;
+    height: 20px;
+    background-color: #fff;
+    right: 0px;
+    top: -20px;
+  }
+  header .banner .scroll {
+    display: none;
   }
 }
 @keyframes scroll {
@@ -484,6 +598,12 @@ header .banner .scroll span::after {
   animation: hashtag 120s linear infinite;
 }
 
+@media screen and (max-width: 768px) {
+  .marquee .marquee_pic .pic_list .pic {
+    width: 50%;
+    flex-shrink: 0;
+  }
+}
 @keyframes mar {
   from {
     left: 0;
@@ -542,11 +662,11 @@ header .banner .scroll span::after {
 }
 .poster .poster_list {
   display: flex;
-  width: 83.33333%;
+  width: 80%;
   margin: auto;
 }
 .poster .poster_list .pic {
-  width: 460px;
+  width: 50%;
   height: 250px;
   margin: 0 20px;
   position: relative;
@@ -578,13 +698,27 @@ header .banner .scroll span::after {
   top: 0;
 }
 
+@media screen and (max-width: 768px) {
+  .poster .poster_list {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+  }
+  .poster .poster_list .pic {
+    width: 100%;
+  }
+  .poster .poster_list .pic:nth-of-type(1) {
+    margin-bottom: 100px;
+  }
+}
 .timetable {
   width: 100%;
   padding: 30px 0 60px;
   color: #FAF9F5;
 }
 .timetable .wrap {
-  max-width: 1440px;
+  max-width: 1200px;
   padding: 30px;
   margin: auto;
   display: flex;
@@ -605,7 +739,7 @@ header .banner .scroll span::after {
 }
 .timetable .wrap .title {
   position: relative;
-  width: 38%;
+  width: 40%;
 }
 .timetable .wrap .title h2 {
   font-family: "Montserrat", sans-serif;
@@ -655,7 +789,7 @@ header .banner .scroll span::after {
   padding-left: 20px;
 }
 .timetable .wrap table {
-  width: 58%;
+  width: 60%;
   margin-left: auto;
   background-color: #201F21;
   border-radius: 10px;
@@ -666,9 +800,19 @@ header .banner .scroll span::after {
 .timetable .wrap table caption {
   font-size: 45px;
   text-transform: uppercase;
-  border-bottom: 1px solid #FAF9F5;
   margin-bottom: 30px;
   display: none;
+  position: relative;
+}
+.timetable .wrap table caption:after {
+  content: "";
+  width: 30%;
+  height: 1px;
+  background-color: #4EF8EB;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .timetable .wrap table tbody {
   height: 400px;
@@ -760,28 +904,57 @@ header .banner .scroll span::after {
   color: #FAF9F5;
 }
 
+@media screen and (max-width: 768px) {
+  .timetable .wrap {
+    max-width: 1200px;
+    padding: 30px;
+    margin: auto;
+  }
+  .timetable .wrap .title {
+    display: none;
+  }
+  .timetable .wrap table {
+    width: 100%;
+  }
+  .timetable .wrap table caption {
+    display: block;
+  }
+  .timetable .wrap table tr:hover::after {
+    transform: scaleX(0);
+  }
+  .timetable .wrap table tr td:nth-of-type(1) {
+    width: 30%;
+  }
+  .timetable .wrap table tr td:nth-of-type(2) {
+    width: 70%;
+  }
+  .timetable .wrap table tr td a:focus {
+    color: #4EF8EB;
+  }
+  .timetable .wrap table tr .tag {
+    display: none;
+  }
+}
 .latest_news {
   width: 100%;
   padding: 60px 0;
 }
 .latest_news .news_wrap {
-  max-width: 1440px;
+  max-width: 1200px;
   margin: auto;
   text-align: right;
 }
 .latest_news .news_wrap .news_group {
-  width: 1000px;
+  width: 100%;
   margin-left: auto;
   background-color: #201F21;
 }
 .latest_news .news_wrap .news_card_list {
-  width: 1440px;
+  width: 100%;
   border-radius: 20px;
-  position: relative;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-  left: -460px;
 }
 .latest_news .news_wrap h2 {
   font-family: "Montserrat", sans-serif;
@@ -803,9 +976,6 @@ header .banner .scroll span::after {
   display: block;
 }
 .latest_news .news_wrap .news_card {
-  width: 440px;
-  margin: 0 20px;
-  position: relative;
   z-index: 2;
   margin-top: 40px;
   border: 1px solid black;
@@ -961,6 +1131,35 @@ header .banner .scroll span::after {
   height: 100%;
 }
 
+@media screen and (max-width: 768px) {
+  .latest_news .news_wrap {
+    text-align: center;
+  }
+  .latest_news .news_wrap h2 {
+    font-size: 52px;
+    font-weight: 700;
+  }
+  .latest_news .news_wrap h2::after {
+    bottom: -10px;
+  }
+  .latest_news .news_wrap .news_card {
+    width: 70%;
+    margin: auto;
+  }
+  .latest_news .news_wrap .news_card .txt span {
+    font-size: 1.5rem;
+  }
+  .latest_news .news_wrap .news_box table tr {
+    grid-template-columns: 2fr 3fr;
+    text-align: left;
+  }
+  .latest_news .news_wrap .news_box table td {
+    font-size: 1.5rem;
+  }
+  .latest_news .news_wrap .news_box table td:nth-of-type(1) {
+    display: none;
+  }
+}
 .interview {
   width: 100%;
   padding: 60px 0px;
