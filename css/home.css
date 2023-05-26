@@ -703,10 +703,12 @@ header .banner .scroll span::after {
     display: flex;
     flex-direction: column;
     width: 80%;
+    align-items: center;
     margin: auto;
+    outline: 1px solid red;
   }
   .poster .poster_list .pic {
-    width: 100%;
+    width: 80%;
   }
   .poster .poster_list .pic:nth-of-type(1) {
     margin-bottom: 100px;

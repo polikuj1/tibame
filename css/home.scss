@@ -758,9 +758,11 @@ header {
       display: flex;
       flex-direction: column;
       width: 80%;
+      align-items: center;
       margin: auto;
+      outline: 1px solid red;
       .pic {
-        width: 100%;
+        width: 80%;
         &:nth-of-type(1) {
           margin-bottom: 100px;
         } 
